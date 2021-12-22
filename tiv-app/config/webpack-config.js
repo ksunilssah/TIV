@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = (environment) => {
   const isProduction = environment === 'production';
@@ -13,6 +14,11 @@ module.exports = (environment) => {
       path: path.resolve('build'),
       chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
       publicPath: '/',
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
     },
     module: {
       rules: [
@@ -27,7 +33,7 @@ module.exports = (environment) => {
           },
         },
         {
-          test: /\.scss$/,
+          test: /\.(css|scss)$/,
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
@@ -42,10 +48,10 @@ module.exports = (environment) => {
       ],
     },
     plugins: [
+      new ESLintPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css',
         chunkFilename: 'css/[name].[contenthash:8].chunk.css',
-
       }),
       new HtmlWebpackPlugin({
         template: 'public/index.html',
@@ -58,5 +64,8 @@ module.exports = (environment) => {
         },
       }),
     ],
+    performance: {
+      hints: false,
+    }
   };
 };

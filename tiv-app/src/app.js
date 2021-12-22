@@ -1,36 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-
-
-@inject('birdStore')
+import Grid from './components/grid';
+import { getStockList } from './service/get-stock';
+@inject('store')
 @observer
-export default class App extends React.Component{
+export default class App extends Component {
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { birdStore } = this.props;
-    birdStore.addBird(this.bird.value);
-    this.bird.value = "";
 
-  }
-  render(){
-    const { birdStore } = this.props;
-    const { BirdCount, birds } = birdStore;
-    return (
-      <div className="App">
-        <h1>Mobx React Demo</h1>
-        <h2>Bird count is {BirdCount} </h2>
-        <form onSubmit= {this.handleSubmit}> 
-          <input type="text"  placeholder="Brid name" ref = { input => this.bird = input } />
-          <button>Add Bird</button>
-        </form>
+	async componentDidMount() {
+		try {
+			await getStockList();
+			this.props.store.updateAppStatus();
+		} catch (error) {
+			console.log('error while initializations of app', error)
+		}
+	}
 
-        <ul>
-          {
-            birds.map( (bird, index) => <li key={bird+index}>{bird}</li>)
-          }
-        </ul>
-      </div>
-    );
-  }
+
+
+	render() {
+		const { appLoadingStatus } = this.props.store;
+
+		return (
+			<div className="wrapper">
+				{!appLoadingStatus ?
+					<div className="loader">Loading</div> :
+					<div className="container">
+						<Grid></Grid>
+					</div>
+				}
+			</div>
+		);
+	}
 }

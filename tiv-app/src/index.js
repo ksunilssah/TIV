@@ -4,12 +4,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 import App from './app';
-import birdStore from './store';
+import store from './store';
 
 const Root = (
-  <Provider birdStore={birdStore}>
-    <App />
-  </Provider>
+	<Provider store={store}>
+		<App />
+	</Provider>
 );
 
 ReactDOM.render(Root, document.getElementById('root'));

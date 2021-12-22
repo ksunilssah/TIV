@@ -1,20 +1,26 @@
-import {makeObservable, observable, action, computed } from 'mobx';
+import { makeObservable, observable, action } from 'mobx';
 
-class BirdStore {
-    @observable birds = [];
+class Store {
+	appLoadingStatus = false;
+	stockList = [];
 
-    constructor() {
-        makeObservable(this)
-    }
-    
-    @action addBird = (bird) => {
-        this.birds.push(bird);
-    }
+	constructor() {
+		makeObservable(this, {
+			appLoadingStatus: observable,
+			stockList: observable,
+			updateAppStatus: action,
+			updateStockSList: action,
+			// stockList: computed
+		})
+	}
 
-    @computed get BirdCount() {
-        return this.birds.length;
-    }
+	updateAppStatus = () => {
+		this.appLoadingStatus = true;
+	}
+	updateStockSList = (stock) => {
+		this.stockList = stock;
+	}
 }
 
-const birdStore = new BirdStore();
-export default birdStore;
+const store = new Store();
+export default store;
