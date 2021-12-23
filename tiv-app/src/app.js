@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import Grid from './components/grid';
-import { getStockList } from './service/get-stock';
+import VolumeShocker from './components/volume-shockers';
+import { getVolumeShocker } from './service/get-stock';
+import { Sidebar } from './components/sidebar';
+import Header from './components/header';
+
 @inject('store')
 @observer
 export default class App extends Component {
-
-
-	async componentDidMount() {
-		try {
-			await getStockList();
+	componentDidMount() {
+		Promise.all([
+			getVolumeShocker()
+		].flat()).then(() => {
 			this.props.store.updateAppStatus();
-		} catch (error) {
-			console.log('error while initializations of app', error)
-		}
+		}, () => {
+			console.log('error while initializations of app')
+		});
 	}
-
-
 
 	render() {
 		const { appLoadingStatus } = this.props.store;
-
 		return (
-			<div className="wrapper">
+			<div className="container-scroller">
 				{!appLoadingStatus ?
 					<div className="loader">Loading</div> :
-					<div className="container">
-						<Grid></Grid>
-					</div>
+					<>
+						<Sidebar />
+						<div className="container-fluid page-body-wrapper">
+							<Header />
+							<div className="main-panel">
+								<div className="content-wrapper">
+									<VolumeShocker />
+								</div>
+							</div>
+						</div>
+					</>
 				}
 			</div>
 		);

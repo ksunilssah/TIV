@@ -2,24 +2,33 @@ import { makeObservable, observable, action } from 'mobx';
 
 class Store {
 	appLoadingStatus = false;
-	stockList = [];
+	volumeShockerShort = [];
+	volumeShockerLong = [];
 
 	constructor() {
 		makeObservable(this, {
 			appLoadingStatus: observable,
-			stockList: observable,
+			volumeShockerShort: observable,
+			volumeShockerLong: observable,
 			updateAppStatus: action,
-			updateStockSList: action,
+			updateVolumeShockerLong: action,
+			updateVolumeShockerShort: action,
+
 			// stockList: computed
 		})
 	}
 
 	updateAppStatus = () => {
 		this.appLoadingStatus = true;
-	}
-	updateStockSList = (stock) => {
-		this.stockList = stock;
-	}
+	};
+
+	updateVolumeShockerLong = (stockLong) => {
+		this.volumeShockerLong = stockLong;
+	};
+
+	updateVolumeShockerShort = (stockShort) => {
+		this.volumeShockerShort = stockShort;
+	};
 }
 
 const store = new Store();

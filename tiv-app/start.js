@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     compress: true,
     hot: true,
-    // https: true,
+    https: true,
     port: 8080,
     open: true,
     headers: {

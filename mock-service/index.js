@@ -1,43 +1,17 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const https = require('https');
+const fs = require('fs');
 
-getData = () => {
-  const rowData = [];
-  rowData.push(
-    {
-      symbol: "HAVELLS",
-      volume: Math.floor(Math.random() * 550000),
-      LTP: Math.floor(Math.random() * 20),
-    },
-    {
-      symbol: "EXIDEIND",
-      volume: Math.floor(Math.random() * 550000),
-      LTP: Math.floor(Math.random() * 300),
-    },
-    {
-      symbol: "PAYTM",
-      volume: Math.floor(Math.random() * 550000),
-      LTP: Math.floor(Math.random() * 600),
-    },
-    {
-      symbol: "YESBANK",
-      volume: Math.floor(Math.random() * 550000),
-      LTP: Math.floor(Math.random() * 20),
-    },
-    {
-      symbol: "SBI",
-      volume: Math.floor(Math.random() * 550000),
-      LTP: Math.floor(Math.random() * 300),
-    },
-    {
-      symbol: "TATAMOTORS",
-      volume: Math.floor(Math.random() * 550000),
-      LTP: Math.floor(Math.random() * 600),
-    },
-  );
-  return rowData;
-};
+const app = express();
+const port = 3000;
+
+LoadJSONFile = (fileName) => {
+  const filePath = `./data/${fileName}`;
+  const json = fs.readFileSync(filePath);
+  return JSON.parse(json);
+}
+
+
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -45,12 +19,25 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/stocks', (req, res) => {
-  const result = getData();
+app.get('/volume_shocker', (req, res) => {
+  const result = LoadJSONFile('volume-shocker.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * -100);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+  });
 
-  res.send({ result })
+  res.send({ ...result })
 })
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`)
+
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
+const server = https.createServer(options, app);
+server.listen(port, () => {
+  console.log(`App listening at https://localhost:${port}`)
 })

@@ -1,12 +1,14 @@
 import apiService from './index';
 import store from '../store';
+import { volumeShocker } from './constants';
 
-
-export const getStockList = async () => {
+export const getVolumeShocker = async () => {
 	try {
-		const response = await apiService.get('stocks');
-		if (response.data.result) {
-			store.updateStockSList(response.data.result);
+		const response = await apiService.get(volumeShocker);
+		if (response.data) {
+			const { long, short } = response.data;
+			store.updateVolumeShockerLong(long);
+			store.updateVolumeShockerShort(short);
 		}
 	} catch (error) {
 		console.log('stock api error', error);
