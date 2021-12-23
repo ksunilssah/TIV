@@ -27,8 +27,10 @@ app.get('/volume_shocker', (req, res) => {
   result.short.map((item) => {
     item.lastPrice = Math.floor(Math.random() * 100);
   });
+  setTimeout(function () {
+    res.send({ ...result })
+  }, 40000);
 
-  res.send({ ...result })
 })
 
 

@@ -4,7 +4,7 @@ import VolumeShocker from './components/volume-shockers';
 import { getVolumeShocker } from './service/get-stock';
 import { Sidebar } from './components/sidebar';
 import Header from './components/header';
-
+import Spinner from './components/spinner';
 @inject('store')
 @observer
 export default class App extends Component {
@@ -23,7 +23,7 @@ export default class App extends Component {
 		return (
 			<div className="container-scroller">
 				{!appLoadingStatus ?
-					<div className="loader">Loading</div> :
+					<div className="loader"><Spinner /></div> :
 					<>
 						<Sidebar />
 						<div className="container-fluid page-body-wrapper">
