@@ -22,15 +22,36 @@ app.use((req, res, next) => {
 app.get('/volume_shocker', (req, res) => {
   const result = LoadJSONFile('volume-shocker.json');
   result.long.map((item) => {
-    item.lastPrice = Math.floor(Math.random() * -100);
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
   });
   result.short.map((item) => {
     item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
   });
-  setTimeout(function () {
-    res.send({ ...result })
-  }, 100);
+  res.send({ ...result });
 
+})
+
+app.get('/high_momentum', (req, res) => {
+  const result = LoadJSONFile('high-momentum.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  res.send({ ...result });
 })
 
 

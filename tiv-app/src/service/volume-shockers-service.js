@@ -6,9 +6,7 @@ export const getVolumeShocker = async () => {
 	try {
 		const response = await apiService.get(volumeShocker);
 		if (response.data) {
-			const { long, short } = response.data;
-			store.updateVolumeShockerLong(long);
-			store.updateVolumeShockerShort(short);
+			store.updateVolumeShocker(response.data);
 		}
 	} catch (error) {
 		console.log('stock api error', error);

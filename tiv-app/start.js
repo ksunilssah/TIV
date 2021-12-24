@@ -13,6 +13,7 @@ module.exports = {
 		https: true,
 		port: 8080,
 		open: true,
+		historyApiFallback: true,
 		//host: 'app.tiv.arshendemo.xyz',
 		headers: {
 			'Access-Control-Allow-Origin': '*',

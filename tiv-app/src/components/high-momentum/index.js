@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { VolumeGrid } from './volume-grid';
-import { getVolumeShocker } from '../../service/volume-shockers-service';
+import { MomentumGrid } from './momentum-grid';
+import { getHighMomentum } from '../../service/high-momentum-service';
 import { callFrequency } from '../../service/constants';
+
 const columnsDetails = {
 	columnDefs: [
 		{
@@ -43,12 +44,12 @@ const columnsDetails = {
 
 @inject('store')
 @observer
-class VolumeShocker extends Component {
+export default class HighMomentum extends Component {
 
 	componentDidMount() {
-		getVolumeShocker();
+		getHighMomentum();
 		this.interval = setInterval(function () {
-			getVolumeShocker();
+			getHighMomentum();
 		}, callFrequency);
 	}
 
@@ -58,23 +59,20 @@ class VolumeShocker extends Component {
 
 
 	render() {
-		const { volumeShocker } = this.props.store;
-		return <div className="row volume-shockers custom-grid">
-			<VolumeGrid
+		const { highMomentum } = this.props.store;
+		return <div className="row high-momentum custom-grid">
+			<MomentumGrid
 				columnDefs={columnsDetails.columnDefs}
-				rowData={volumeShocker.long}
+				rowData={highMomentum.long}
 				defaultColDef={columnsDetails.defaultColDef}
-				title='Volume Stock for Long'
-				key={1}
+				title='Momentum Stock for Long'
 			/>
-			<VolumeGrid
+			<MomentumGrid
 				columnDefs={columnsDetails.columnDefs}
-				rowData={volumeShocker.short}
+				rowData={highMomentum.short}
 				defaultColDef={columnsDetails.defaultColDef}
-				title='Volume Stock for short'
-				key={2}
+				title='Momentum Stock for short'
 			/>
 		</div>
 	}
 }
-export default VolumeShocker;

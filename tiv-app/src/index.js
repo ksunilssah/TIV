@@ -3,12 +3,15 @@ import './styles/custom.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
+import { BrowserRouter } from 'react-router-dom';
 import App from './app';
 import store from './store';
 
 const Root = (
 	<Provider store={store}>
-		<App />
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
 	</Provider>
 );
 

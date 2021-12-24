@@ -1,42 +1,30 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import VolumeShocker from './components/volume-shockers';
-import { getVolumeShocker } from './service/get-stock';
 import { Sidebar } from './components/sidebar';
 import Header from './components/header';
-import Spinner from './components/spinner';
-@inject('store')
-@observer
-export default class App extends Component {
-	componentDidMount() {
-		Promise.all([
-			getVolumeShocker()
-		].flat()).then(() => {
-			this.props.store.updateAppStatus();
-		}, () => {
-			console.log('error while initializations of app')
-		});
-	}
+import HighMomentum from './components/high-momentum';
 
-	render() {
-		const { appLoadingStatus } = this.props.store;
-		return (
-			<div className="container-scroller">
-				{!appLoadingStatus ?
-					<div className="loader"><Spinner /></div> :
-					<>
-						<Sidebar />
-						<div className="container-fluid page-body-wrapper">
-							<Header />
-							<div className="main-panel">
-								<div className="content-wrapper">
-									<VolumeShocker />
-								</div>
-							</div>
-						</div>
-					</>
-				}
+const App = () => <div className="container-scroller">
+	<Sidebar />
+	<div className="container-fluid page-body-wrapper">
+		<Header />
+		<div className="main-panel">
+			<div className="content-wrapper">
+				<Routes >
+					<Route path="/" element={<h1>Home</h1>} />
+					<Route path="high-momentum" element={<HighMomentum />} />
+					<Route path="volume-shocker" element={<VolumeShocker />} />
+				</Routes>
 			</div>
-		);
-	}
-}
+		</div>
+	</div>
+</div>;
+
+
+
+
+export default App;

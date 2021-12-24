@@ -1,7 +1,7 @@
 import React from 'react';
 import { AgGridReact } from 'ag-grid-react';
 
-export const VolumeGrid = (props) => {
+export const MomentumGrid = (props) => {
 	const { rowData, columnDefs, defaultColDef, title } = props;
 	return (
 		<div className="col-lg-6 grid-margin stretch-card">
