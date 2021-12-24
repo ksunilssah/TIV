@@ -29,7 +29,7 @@ app.get('/volume_shocker', (req, res) => {
   });
   setTimeout(function () {
     res.send({ ...result })
-  }, 40000);
+  }, 100);
 
 })
 

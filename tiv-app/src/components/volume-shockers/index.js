@@ -10,7 +10,7 @@ const columnsDetails = {
 		{
 			field: 'symbol',
 			headerName: 'Symbol',
-			//rowDrag: true,
+			rowDrag: true,
 			width: 150,
 		},
 		{
@@ -18,10 +18,6 @@ const columnsDetails = {
 			headerName: 'LTP',
 			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
 			width: 100,
-			icons: {
-				sortAscending: 'U',
-				sortDescending: 'D',
-			},
 		},
 		{
 			headerName: 'Change',
@@ -43,7 +39,7 @@ const columnsDetails = {
 	defaultColDef: {
 		width: 110,
 		sortable: true,
-		//filter: true,
+		filter: true,
 	},
 };
 
@@ -54,7 +50,7 @@ class VolumeShocker extends Component {
 	componentDidMount() {
 		this.interval = setInterval(function () {
 			getVolumeShocker();
-		}, 3000);
+		}, 60000);
 	}
 
 	componentWillUnmount() {
@@ -64,18 +60,20 @@ class VolumeShocker extends Component {
 
 	render() {
 		const { volumeShockerShort, volumeShockerLong } = this.props.store;
-		return <div className="row">
+		return <div className="row volume-shockers">
 			<VolumeGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={volumeShockerLong}
 				defaultColDef={columnsDetails.defaultColDef}
 				title='Volume Stock for Long'
+				key={1}
 			/>
 			<VolumeGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={volumeShockerShort}
 				defaultColDef={columnsDetails.defaultColDef}
 				title='Volume Stock for short'
+				key={2}
 			/>
 		</div>
 	}

@@ -2,6 +2,27 @@
  color: #fff;
  text-decoration: none;
 }
+.navbar .navbar-brand-wrapper .navbar-brand {
+  color: #fff;
+}
+
+.volume-shockers {
+  .card {
+    .card-body{
+      padding: 0;
+
+      .card-title {
+        padding: 12px 12px 0 12px;
+      }
+      .ag-theme-alpine-dark {
+        .ag-root-wrapper{
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
 
 .loader {
     margin: 0 auto;
