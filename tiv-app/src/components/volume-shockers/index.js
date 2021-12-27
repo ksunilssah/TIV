@@ -42,6 +42,7 @@ const columnsDetails = {
 		width: 110,
 		sortable: true,
 		filter: true,
+		resizable: true,
 	},
 };
 
@@ -69,14 +70,12 @@ class VolumeShocker extends Component {
 				rowData={volumeShocker.long}
 				defaultColDef={columnsDetails.defaultColDef}
 				title='Volume Stock for Long'
-				key={1}
 			/>
 			<VolumeGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={volumeShocker.short}
 				defaultColDef={columnsDetails.defaultColDef}
 				title='Volume Stock for short'
-				key={2}
 			/>
 		</div>
 	}

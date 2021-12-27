@@ -54,6 +54,15 @@ app.get('/high_momentum', (req, res) => {
   res.send({ ...result });
 })
 
+app.get('/sectoral_view', (req, res) => {
+  const result = LoadJSONFile('sectoral-view.json');
+  result.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+  });
+  res.send(result);
+});
 
 const options = {
   key: fs.readFileSync('key.pem'),

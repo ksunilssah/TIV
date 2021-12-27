@@ -7,10 +7,16 @@
 }
 
 .custom-grid {
+  &.row {
+    height: 100%;
+  }
   .card {
     .card-body{
       padding: 0;
-
+      
+    .table-responsive {
+      height: 98%;
+    }
       .card-title {
         padding: 12px 12px 0 12px;
       }

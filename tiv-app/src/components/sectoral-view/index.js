@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { MomentumGrid } from './momentum-grid';
-import { getHighMomentum } from '../../service/high-momentum-service';
+import SectoralGrid from './sectoral-grid';
+import { getSectoralView } from '../../service/sectoral-view-service';
 import { callFrequency } from '../../service/constants';
+import SectorViewGraph from './sector-view-graph';
 
 const columnsDetails = {
 	columnDefs: [
@@ -19,10 +20,6 @@ const columnsDetails = {
 			width: 100,
 		},
 		{
-			headerName: 'PClose',
-			field: 'previousClose'
-		},
-		{
 			headerName: 'Change',
 			field: 'changePrice',
 			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
@@ -34,9 +31,17 @@ const columnsDetails = {
 			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' }
 		},
 		{
-			headerName: 'Volume',
-			field: 'totalTurnover'
-		}
+			headerName: 'Adv',
+			field: 'advances'
+		},
+		{
+			headerName: 'Dec',
+			field: 'declines'
+		},
+		{
+			headerName: 'PClose',
+			field: 'previousClose'
+		},
 
 	],
 	defaultColDef: {
@@ -49,12 +54,12 @@ const columnsDetails = {
 
 @inject('store')
 @observer
-export default class HighMomentum extends Component {
+export default class SectoralView extends Component {
 
 	componentDidMount() {
-		getHighMomentum();
+		getSectoralView();
 		this.interval = setInterval(function () {
-			getHighMomentum();
+			getSectoralView();
 		}, callFrequency);
 	}
 
@@ -64,19 +69,14 @@ export default class HighMomentum extends Component {
 
 
 	render() {
-		const { highMomentum } = this.props.store;
-		return <div className="row high-momentum custom-grid">
-			<MomentumGrid
+		const { sectoralView } = this.props.store;
+		return <div className="row sectoral-view custom-grid">
+			<SectorViewGraph />
+			<SectoralGrid
 				columnDefs={columnsDetails.columnDefs}
-				rowData={highMomentum.long}
+				rowData={sectoralView}
 				defaultColDef={columnsDetails.defaultColDef}
-				title='Momentum Stock for Long'
-			/>
-			<MomentumGrid
-				columnDefs={columnsDetails.columnDefs}
-				rowData={highMomentum.short}
-				defaultColDef={columnsDetails.defaultColDef}
-				title='Momentum Stock for short'
+				title='Nifty Index'
 			/>
 		</div>
 	}
