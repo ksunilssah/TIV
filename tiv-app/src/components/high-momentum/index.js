@@ -19,6 +19,10 @@ const columnsDetails = {
 			width: 100,
 		},
 		{
+			headerName: 'PClose',
+			field: 'previousClose'
+		},
+		{
 			headerName: 'Change',
 			field: 'changePrice',
 			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },

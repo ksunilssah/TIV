@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (environment) => {
 	const isProduction = environment === 'production';
@@ -56,6 +57,17 @@ module.exports = (environment) => {
 			],
 		},
 		plugins: [
+			new CopyPlugin({
+				patterns: [
+					{
+						from: 'public/css',
+						to: 'css'
+					}, {
+						from: 'public/fonts',
+						to: 'fonts'
+					}
+				]
+			}),
 			new ESLintPlugin(),
 			new MiniCssExtractPlugin({
 				filename: 'css/[name].css',
