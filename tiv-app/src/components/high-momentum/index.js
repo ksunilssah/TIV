@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { MomentumGrid } from './momentum-grid';
 import { getHighMomentum } from '../../service/high-momentum-service';
-import { callFrequency } from '../../service/constants';
+import { callFrequency, defaultColDef } from '../../service/constants';
 
 const columnsDetails = {
 	columnDefs: [
@@ -10,7 +10,6 @@ const columnsDetails = {
 			field: 'symbol',
 			headerName: 'Symbol',
 			rowDrag: true,
-			width: 150,
 		},
 		{
 			field: 'lastPrice',
@@ -20,7 +19,8 @@ const columnsDetails = {
 		},
 		{
 			headerName: 'PClose',
-			field: 'previousClose'
+			field: 'previousClose',
+			width: 100,
 		},
 		{
 			headerName: 'Change',
@@ -31,20 +31,15 @@ const columnsDetails = {
 		{
 			headerName: '% Change',
 			field: 'pChange',
-			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' }
+			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
+			width: 100,
 		},
 		{
 			headerName: 'Volume',
 			field: 'totalTurnover'
 		}
 
-	],
-	defaultColDef: {
-		width: 110,
-		sortable: true,
-		filter: true,
-		resizable: true,
-	},
+	]
 };
 
 @inject('store')
@@ -69,13 +64,13 @@ export default class HighMomentum extends Component {
 			<MomentumGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={highMomentum.long}
-				defaultColDef={columnsDetails.defaultColDef}
+				defaultColDef={defaultColDef}
 				title='Momentum Stock for Long'
 			/>
 			<MomentumGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={highMomentum.short}
-				defaultColDef={columnsDetails.defaultColDef}
+				defaultColDef={defaultColDef}
 				title='Momentum Stock for short'
 			/>
 		</div>

@@ -17,7 +17,6 @@ export const MomentumGrid = (props) => {
 								animateRows={true}
 								rowData={rowData}
 								enableCellTextSelection={true}
-								ensureDomOrder={true}
 							/>
 						</div>
 					</div>

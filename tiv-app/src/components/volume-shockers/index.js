@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { VolumeGrid } from './volume-grid';
 import { getVolumeShocker } from '../../service/volume-shockers-service';
-import { callFrequency } from '../../service/constants';
+import { callFrequency, defaultColDef } from '../../service/constants';
 const columnsDetails = {
 	columnDefs: [
 		{
 			field: 'symbol',
 			headerName: 'Symbol',
 			rowDrag: true,
-			width: 150,
 		},
 		{
 			field: 'lastPrice',
@@ -19,7 +18,8 @@ const columnsDetails = {
 		},
 		{
 			headerName: 'PClose',
-			field: 'previousClose'
+			field: 'previousClose',
+			width: 100,
 		},
 		{
 			headerName: 'Change',
@@ -30,20 +30,15 @@ const columnsDetails = {
 		{
 			headerName: '% Change',
 			field: 'pChange',
-			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' }
+			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
+			width: 100,
 		},
 		{
 			headerName: 'Volume',
 			field: 'totalTurnover'
 		}
 
-	],
-	defaultColDef: {
-		width: 110,
-		sortable: true,
-		filter: true,
-		resizable: true,
-	},
+	]
 };
 
 @inject('store')
@@ -68,13 +63,13 @@ class VolumeShocker extends Component {
 			<VolumeGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={volumeShocker.long}
-				defaultColDef={columnsDetails.defaultColDef}
+				defaultColDef={defaultColDef}
 				title='Volume Stock for Long'
 			/>
 			<VolumeGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={volumeShocker.short}
-				defaultColDef={columnsDetails.defaultColDef}
+				defaultColDef={defaultColDef}
 				title='Volume Stock for short'
 			/>
 		</div>

@@ -64,6 +64,19 @@ app.get('/sectoral_view', (req, res) => {
   res.send(result);
 });
 
+app.get('/index_view/:index', (req, res) => {
+  const result = LoadJSONFile('nifty-auto.json');
+  result.map((item) => {
+    item.list.map((subItem) => {
+      subItem.lastPrice = Math.floor(Math.random() * 100);
+      subItem.changePrice = (Math.random() * 5).toFixed(2);
+      subItem.pChange = (Math.random() * 5).toFixed(2);
+    });
+
+  });
+  res.send(result);
+});
+
 const options = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem')

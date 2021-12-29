@@ -5,6 +5,7 @@ class Store {
 	volumeShocker = [];
 	highMomentum = [];
 	sectoralView = [];
+	indexView = [];
 
 	constructor() {
 		makeAutoObservable(this)
@@ -24,6 +25,10 @@ class Store {
 
 	updateSectoralView = (sectors) => {
 		this.sectoralView = sectors;
+	}
+
+	updateIndexView = (indexList) => {
+		this.indexView = indexList;
 	}
 }
 

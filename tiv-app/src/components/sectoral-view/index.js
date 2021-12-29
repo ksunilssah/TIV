@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import SectoralGrid from './sectoral-grid';
 import { getSectoralView } from '../../service/sectoral-view-service';
-import { callFrequency } from '../../service/constants';
+import { callFrequency, defaultColDef } from '../../service/constants';
 import SectorViewGraph from './sector-view-graph';
 
 const columnsDetails = {
@@ -11,7 +11,6 @@ const columnsDetails = {
 			field: 'symbol',
 			headerName: 'Symbol',
 			rowDrag: true,
-			width: 150,
 		},
 		{
 			field: 'lastPrice',
@@ -28,28 +27,26 @@ const columnsDetails = {
 		{
 			headerName: '% Change',
 			field: 'pChange',
-			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' }
+			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
+			width: 100,
 		},
 		{
 			headerName: 'Adv',
-			field: 'advances'
+			field: 'advances',
+			width: 100,
 		},
 		{
 			headerName: 'Dec',
-			field: 'declines'
+			field: 'declines',
+			width: 100,
 		},
 		{
 			headerName: 'PClose',
-			field: 'previousClose'
+			field: 'previousClose',
+			width: 100,
 		},
 
-	],
-	defaultColDef: {
-		width: 110,
-		sortable: true,
-		filter: true,
-		resizable: true,
-	},
+	]
 };
 
 @inject('store')
@@ -67,6 +64,11 @@ export default class SectoralView extends Component {
 		clearInterval(this.interval);
 	}
 
+	onRowSelect = (index) => {
+		const { setActiveIndex } = this.props.store;
+		setActiveIndex(index);
+	}
+
 
 	render() {
 		const { sectoralView } = this.props.store;
@@ -75,8 +77,9 @@ export default class SectoralView extends Component {
 			<SectoralGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={sectoralView}
-				defaultColDef={columnsDetails.defaultColDef}
+				defaultColDef={defaultColDef}
 				title='Nifty Index'
+				onRowSelect={this.onRowSelect}
 			/>
 		</div>
 	}
