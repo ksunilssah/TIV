@@ -1,5 +1,5 @@
 //export const apiURL = 'https://localhost:3000/';
-export const apiURL = 'https://tiv.arshendemo.xyz/api/';
+export const apiURL = 'https://decode.tradinginveins.com/api/';
 export const tradingViewURl = 'https://www.tradingview.com';
 export const highMomentum = 'high_momentum';
 export const volumeShocker = 'volume_shocker';
