@@ -9,6 +9,7 @@ import { Sidebar } from './components/sidebar';
 import Header from './components/header';
 import HighMomentum from './components/high-momentum';
 import SectoralView from './components/sectoral-view';
+import MarketStatus from './components/market-status';
 
 const App = () => <div className="container-scroller">
 	<Sidebar />
@@ -21,6 +22,7 @@ const App = () => <div className="container-scroller">
 					<Route path="high-momentum" element={<HighMomentum />} />
 					<Route path="volume-shocker" element={<VolumeShocker />} />
 					<Route path="sectoral-view" element={<SectoralView />} />
+					<Route path="market-status" element={<MarketStatus />} />
 				</Routes>
 			</div>
 		</div>

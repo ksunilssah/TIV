@@ -73,7 +73,9 @@ export default class SectoralView extends Component {
 	render() {
 		const { sectoralView } = this.props.store;
 		return <div className="row sectoral-view custom-grid">
-			<SectorViewGraph />
+			<SectorViewGraph
+				rowData={sectoralView}
+			/>
 			<SectoralGrid
 				columnDefs={columnsDetails.columnDefs}
 				rowData={sectoralView}

@@ -86,7 +86,22 @@ export default class IndexView extends Component {
 
 		const { store, showDialog, selectedIndex } = this.props;
 		const { indexView } = store;
-		const rowData = indexView.length > 0 ? indexView[0].list : [];
+		let rowData = [];
+		let changePer = '';
+		let changeP = '';
+		let PClose = '';
+		let ltp = '';
+
+		if (indexView.length > 0) {
+			rowData = indexView[0].list;
+			const { pChange, changePrice, previousClose, lastPrice } = indexView[0];
+			changePer = pChange;
+			changeP = changePrice;
+			PClose = previousClose;
+			ltp = lastPrice;
+		}
+
+
 		return <Modal
 			show={showDialog}
 			onHide={this.onClose}
@@ -95,7 +110,10 @@ export default class IndexView extends Component {
 			className="custom-grid"
 		>
 			<Modal.Header closeButton>
-				<Modal.Title>{selectedIndex}</Modal.Title>
+				<Modal.Title>
+					{selectedIndex}
+					<small className="price">{`LTP: 1${ltp} | Change: ${changeP} (${changePer}%) | Prev Close: ${PClose}`} </small>
+				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
 				<div className="ag-theme-alpine-dark index-view" style={{ height: '400px', width: '100%' }}>

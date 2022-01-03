@@ -56,10 +56,15 @@ app.get('/high_momentum', (req, res) => {
 
 app.get('/sectoral_view', (req, res) => {
   const result = LoadJSONFile('sectoral-view.json');
-  result.map((item) => {
+  result.map((item, index) => {
     item.lastPrice = Math.floor(Math.random() * 100);
-    item.changePrice = (Math.random() * 5).toFixed(2);
-    item.pChange = (Math.random() * 5).toFixed(2);
+    if (index > 2 && index < 5) {
+      item.pChange = -(Math.random() * 5).toFixed(2);
+      item.changePrice = -(Math.random() * 5).toFixed(2);
+    } else {
+      item.pChange = (Math.random() * 5).toFixed(2);
+      item.changePrice = (Math.random() * 5).toFixed(2);
+    }
   });
   res.send(result);
 });
@@ -76,6 +81,20 @@ app.get('/index_view/:index', (req, res) => {
   });
   res.send(result);
 });
+
+app.get('/market_status', (req, res) => {
+  const result = LoadJSONFile('market-status.json');
+  result.index_price[2] = `${(Math.random() * 5).toFixed(2)}`;
+  result.index_price[4] = `${(Math.random() * 5).toFixed(2)}`;
+  result.NIFTY50.declines = -Math.floor(Math.random() * 10);
+  result.NIFTY50.advances = Math.floor(Math.random() * 50);
+  result.NIFTYBANK.declines = -Math.floor(Math.random() * 10);
+  result.NIFTYBANK.advances = Math.floor(Math.random() * 50);
+  result.FNO.declines = -Math.floor(Math.random() * 10);
+  result.FNO.advances = Math.floor(Math.random() * 50);
+  res.send(result);
+});
+
 
 const options = {
   key: fs.readFileSync('key.pem'),

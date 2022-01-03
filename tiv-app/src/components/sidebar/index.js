@@ -50,14 +50,26 @@ export const Sidebar = () => {
 					<span className="menu-title">Live Market</span>
 				</ Link>
 			</li>
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="/pre-open">
+			<li className="nav-item menu-items active">
+				<a className="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
 					<span className="menu-icon">
-						<i className="mdi mdi-contacts"></i>
+						<i className="mdi mdi-laptop"></i>
 					</span>
 					<span className="menu-title">Pre Open</span>
-				</ Link>
+					<i className="menu-arrow"></i>
+				</a>
+				<div className="collapse show" id="ui-basic">
+					<ul className="nav flex-column sub-menu">
+						<li className="nav-item">
+							<Link className="nav-link" to="/index">Index</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/index">Stocks</Link>
+						</li>
+					</ul>
+				</div>
 			</li>
+
 			<li className="nav-item menu-items">
 				<Link className="nav-link" to="/setup-scripts" aria-expanded="false" aria-controls="auth">
 					<span className="menu-icon">

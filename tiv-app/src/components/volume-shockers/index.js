@@ -24,13 +24,13 @@ const columnsDetails = {
 		{
 			headerName: 'Change',
 			field: 'changePrice',
-			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
+			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'green' },
 			width: 100,
 		},
 		{
 			headerName: '% Change',
 			field: 'pChange',
-			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'white' },
+			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'green' },
 			width: 100,
 		},
 		{

@@ -5,22 +5,9 @@ export const highMomentum = 'high_momentum';
 export const volumeShocker = 'volume_shocker';
 export const sectorView = 'sectoral_view';
 export const indexView = 'index_view';
-export const callFrequency = 60000;
-export const niftyLabels = [
-	'NIFTYPHARMA',
-	'NIFTYIT',
-	'NIFTYBANK',
-	'NIFTY50',
-	'NIFTYREALTY',
-	'NIFTYPVTBANK',
-	'NIFTYPSUBANK',
-	'NIFTYAUTO',
-	'FINNIFTY',
-	'NIFTYMETAL',
-	'NIFTYFMCG',
-	'NIFTYENERGY',
-	'NIFTYMEDIA'
-];
+export const marketStatus = 'market_status';
+export const callFrequency = 6000;
+
 export const defaultColDef = {
 	sortable: true,
 	filter: true,

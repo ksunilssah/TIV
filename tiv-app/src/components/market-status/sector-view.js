@@ -24,6 +24,7 @@ export const options = {
 	responsive: true,
 	//indexAxis: 'y',
 	color: '#fff',
+
 	plugins: {
 		legend: {
 			position: 'none',
@@ -34,19 +35,14 @@ export const options = {
 			color: '#fff',
 			fontSize: 14
 		},
+
 	},
 
 };
 
 
 
-const getChartData = (rowData) => {
-	let labels = [];
-	let data = [];
-	rowData.map(({ pChange, symbol }) => {
-		labels.push(symbol);
-		data.push(pChange);
-	})
+const getChartData = (labels, data) => {
 
 	return {
 		labels,
@@ -72,6 +68,7 @@ const getChartData = (rowData) => {
 					'rgba(255,255,255,1)',
 				],
 				borderWidth: .5,
+				width: '400',
 			},
 		],
 	};
@@ -80,13 +77,13 @@ const getChartData = (rowData) => {
 
 
 const SectorViewGraph = (props) => {
-	const { rowData } = props;
+	const { labels = [], data = [] } = props;
 
-	return <div className="col-lg-6 grid-margin stretch-card">
+	return <div className="col-12 grid-margin">
 		<div className="card">
 			<div className="card-body">
-				<div className="table-responsive">
-					<Bar options={options} data={getChartData(rowData)} />
+				<div className="table-responsive market-view-height">
+					<Bar options={options} data={getChartData(labels, data)} />
 				</div>
 			</div>
 		</div>
