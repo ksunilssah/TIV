@@ -1,83 +1,66 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import Logo from './logo';
+import { appConfig } from '../../service/app-config';
 
-export const Sidebar = () => {
-	return <nav className="sidebar sidebar-offcanvas" id="sidebar">
-		<div className="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-			<Link id="logo" className="sidebar-brand brand-logo" to="/">
-				Trading in Veins</Link>
-			<Link id="logo-min" className="sidebar-brand brand-logo-mini" to="/">TIV</Link>
-		</div>
-		<ul className="nav">
+const Menu = () => {
+	const location = useLocation();
+	const { pathname } = location;
+	const splitLocation = pathname.split('/');
+	const activeLink = `/${splitLocation[1]}`;
 
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="/market-status">
+	return appConfig.map(({ routeName, title, icon, subRoutes }, index) => {
+		if (subRoutes) {
+			const subItem = subRoutes.map(({ routeName, title }) => <li key={routeName}
+				className="nav-item">
+				<NavLink
+					className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+					to={routeName}>{title}
+				</NavLink>
+			</li>);
+
+			const activeItem = subRoutes.findIndex(({ routeName }) => routeName === activeLink);
+
+
+			return <li className={activeItem > -1 ?
+				'nav-item menu-items active' : 'nav-item menu-items'} key={routeName + index}>
+				<NavLink className="nav-link" data-toggle="collapse" to={subRoutes[0].routeName}>
 					<span className="menu-icon">
-						<i className="mdi mdi-speedometer"></i>
+						<i className={`mdi ${icon}`}></i>
 					</span>
-					<span className="menu-title">Market Status</span>
-				</Link>
-			</li>
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="/volume-shocker" aria-expanded="false" aria-controls="ui-basic">
-					<span className="menu-icon">
-						<i className="mdi mdi-laptop"></i>
-					</span>
-					<span className="menu-title">Volume Shockers</span>
-				</ Link>
-			</li>
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="/high-momentum">
-					<span className="menu-icon">
-						<i className="mdi mdi-playlist-play"></i>
-					</span>
-					<span className="menu-title">High Momentum</span>
-				</ Link>
-			</li>
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="sectoral-view">
-					<span className="menu-icon">
-						<i className="mdi mdi-table-large"></i>
-					</span>
-					<span className="menu-title">Sectoral View</span>
-				</ Link>
-			</li>
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="/live-market">
-					<span className="menu-icon">
-						<i className="mdi mdi-chart-bar"></i>
-					</span>
-					<span className="menu-title">Live Market</span>
-				</ Link>
-			</li>
-			<li className="nav-item menu-items active">
-				<a className="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-					<span className="menu-icon">
-						<i className="mdi mdi-laptop"></i>
-					</span>
-					<span className="menu-title">Pre Open</span>
+					<span className="menu-title">{title}</span>
 					<i className="menu-arrow"></i>
-				</a>
-				<div className="collapse show" id="ui-basic">
+				</NavLink>
+				<div className={
+					activeItem > -1 ? 'collapse show' : 'collapse'
+				}>
 					<ul className="nav flex-column sub-menu">
-						<li className="nav-item">
-							<Link className="nav-link" to="/index">Index</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="/index">Stocks</Link>
-						</li>
+						{subItem}
 					</ul>
 				</div>
 			</li>
 
-			<li className="nav-item menu-items">
-				<Link className="nav-link" to="/setup-scripts" aria-expanded="false" aria-controls="auth">
+		} else {
+			return <li className={
+				activeLink === routeName ? 'nav-item menu-items active' : 'nav-item menu-items'
+			} key={routeName}>
+				<NavLink className="nav-link" to={routeName}>
 					<span className="menu-icon">
-						<i className="mdi mdi-security"></i>
+						<i className={`mdi ${icon}`}></i>
 					</span>
-					<span className="menu-title">Setup Scripts</span>
-				</ Link>
+					<span className="menu-title">{title}</span>
+				</NavLink>
 			</li>
+		}
+	});
+}
+
+export const Sidebar = (props) => {
+	const { isMenuOpen } = props;
+	return <nav className={isMenuOpen ? 'sidebar sidebar-offcanvas active' : 'sidebar sidebar-offcanvas'} id="sidebar">
+		<Logo />
+		<ul className="nav">
+			<Menu />
 		</ul>
 	</nav>
 }

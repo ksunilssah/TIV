@@ -33,12 +33,7 @@ const columnsDetails = {
 			field: 'pChange',
 			cellStyle: params => params.value < 0 ? { color: 'red' } : { color: 'green' },
 			width: 100,
-		},
-		{
-			headerName: 'Volume',
-			field: 'totalTurnover'
 		}
-
 	]
 };
 
