@@ -6,7 +6,10 @@ class Store {
 	highMomentum = [];
 	sectoralView = [];
 	indexView = [];
+	preIndexList = [];
+	preStocksList = [];
 	marketStatus = {};
+	preOpenStockList = {};
 
 	constructor() {
 		makeAutoObservable(this)
@@ -34,6 +37,17 @@ class Store {
 
 	updateMarketStatus = (marketData) => {
 		this.marketStatus = marketData;
+	}
+
+	updatePreIndexList = (indexList) => {
+		this.preIndexList = indexList;
+	}
+	updatePreStocksList = (stockList) => {
+		this.preStocksList = stockList;
+	}
+
+	updatePreOpenStockList = (stockList) => {
+		this.preOpenStockList = stockList;
 	}
 }
 

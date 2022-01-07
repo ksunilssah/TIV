@@ -1,7 +1,7 @@
 export const appConfig = [
 	{
 		title: 'Market Status',
-		routeName: '/market-status',
+		routeName: '/',
 		icon: 'mdi-speedometer'
 	},
 	{
@@ -30,11 +30,11 @@ export const appConfig = [
 		subRoutes: [
 			{
 				title: 'Index',
-				routeName: '/index'
+				routeName: '/pre-open-index'
 			},
 			{
 				title: 'Stocks',
-				routeName: '/stocks'
+				routeName: '/pre-open-stocks'
 			}
 		]
 	},

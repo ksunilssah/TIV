@@ -95,6 +95,50 @@ app.get('/market_status', (req, res) => {
   res.send(result);
 });
 
+app.get('/pre_open_stocks', (req, res) => {
+  const result = LoadJSONFile('pre-open-stocks.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  res.send({ ...result });
+});
+
+app.get('/pre_open_sectoral_view', (req, res) => {
+  const result = LoadJSONFile('pre-open-sectoral-view.json');
+  result.map((item, index) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    if (index > 2 && index < 5) {
+      item.pChange = -(Math.random() * 5).toFixed(2);
+      item.changePrice = -(Math.random() * 5).toFixed(2);
+    } else {
+      item.pChange = (Math.random() * 5).toFixed(2);
+      item.changePrice = (Math.random() * 5).toFixed(2);
+    }
+  });
+  res.send(result);
+});
+
+app.get('/pre_open_index_view/:index', (req, res) => {
+  const result = LoadJSONFile('pre-open-index-view.json');
+  result.map((item) => {
+    item.list.map((subItem) => {
+      subItem.lastPrice = Math.floor(Math.random() * 100);
+      subItem.changePrice = (Math.random() * 5).toFixed(2);
+      subItem.pChange = (Math.random() * 5).toFixed(2);
+    });
+
+  });
+  res.send(result);
+});
 
 const options = {
   key: fs.readFileSync('key.pem'),
