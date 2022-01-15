@@ -9,8 +9,7 @@ LoadJSONFile = (fileName) => {
   const filePath = `./data/${fileName}`;
   const json = fs.readFileSync(filePath);
   return JSON.parse(json);
-}
-
+};
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
@@ -34,8 +33,7 @@ app.get('/volume_shocker', (req, res) => {
     item.totalTurnover = Math.floor(Math.random() * 1000000);
   });
   res.send({ ...result });
-
-})
+});
 
 app.get('/high_momentum', (req, res) => {
   const result = LoadJSONFile('high-momentum.json');
@@ -52,7 +50,7 @@ app.get('/high_momentum', (req, res) => {
     item.totalTurnover = Math.floor(Math.random() * 1000000);
   });
   res.send({ ...result });
-})
+});
 
 app.get('/sectoral_view', (req, res) => {
   const result = LoadJSONFile('sectoral-view.json');
@@ -77,7 +75,6 @@ app.get('/index_view/:index', (req, res) => {
       subItem.changePrice = (Math.random() * 5).toFixed(2);
       subItem.pChange = (Math.random() * 5).toFixed(2);
     });
-
   });
   res.send(result);
 });
@@ -135,17 +132,16 @@ app.get('/pre_open_index_view/:index', (req, res) => {
       subItem.changePrice = (Math.random() * 5).toFixed(2);
       subItem.pChange = (Math.random() * 5).toFixed(2);
     });
-
   });
   res.send(result);
 });
 
 const options = {
   key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
+  cert: fs.readFileSync('cert.pem'),
 };
 
 const server = https.createServer(options, app);
 server.listen(port, () => {
-  console.log(`App listening at https://localhost:${port}`)
-})
+  console.log(`App listening at https://localhost:${port}`);
+});

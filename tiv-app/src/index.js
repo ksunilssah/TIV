@@ -8,11 +8,11 @@ import App from './app';
 import store from './store';
 
 const Root = (
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
 
 ReactDOM.render(Root, document.getElementById('root'));

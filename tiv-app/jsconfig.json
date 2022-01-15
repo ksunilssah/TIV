@@ -1,11 +1,7 @@
 {
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "experimentalDecorators": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

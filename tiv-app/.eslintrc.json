@@ -1,14 +1,10 @@
 {
   "root": true,
-  "plugins": [
-    "react",
-    "import",
-    "jsx-a11y"
-  ],
+  "plugins": ["react", "import", "jsx-a11y"],
   "extends": [
     "eslint:recommended",
-    "plugin:import/errors",
     "plugin:react/recommended",
+    "plugin:import/errors",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended"
   ],
@@ -30,23 +26,12 @@
     }
   },
   "rules": {
-    "indent": [
-      "error",
-      "tab"
-    ],
     "react/prop-types": 0,
     "linebreak-style": 1,
-    "quotes": [
-      "error",
-      "single"
-    ],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ]
   },

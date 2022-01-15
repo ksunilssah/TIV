@@ -15,7 +15,7 @@ export const preOpenSectoralView = 'pre_open_sectoral_view';
 export const callFrequency = 60000;
 
 export const defaultColDef = {
-	sortable: true,
-	filter: true,
-	resizable: true,
+  sortable: true,
+  filter: true,
+  resizable: true,
 };
