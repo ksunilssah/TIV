@@ -23,7 +23,24 @@ export const options = {
   responsive: true,
   //indexAxis: 'y',
   color: '#fff',
-
+  scales: {
+    y: {
+      grid: {
+        color: 'rgba(255, 255, 255, .1)',
+      },
+      ticks: {
+        color: '#fff',
+      },
+    },
+    x: {
+      grid: {
+        color: 'rgba(255, 255, 255, .1)',
+      },
+      ticks: {
+        color: '#fff',
+      },
+    },
+  },
   plugins: {
     legend: {
       position: 'none',
