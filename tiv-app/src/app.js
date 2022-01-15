@@ -12,6 +12,8 @@ import SectoralView from './components/sectoral-view';
 import MarketStatus from './components/market-status';
 import PreStocks from './components/pre-open/pre-stocks';
 import PreIndexView from './components/pre-open/pre-sectoral-view';
+import PreNifty50 from './components/pre-open/pre-nifty-50';
+import PreFnO from './components/pre-open/pre-fno';
 
 const App = () => {
 	const [isOpen, openMobileMenu] = useState(false);
@@ -35,6 +37,8 @@ const App = () => {
 						<Route path="sectoral-view" element={<SectoralView />} />
 						<Route path="pre-open-index" element={<PreIndexView />} />
 						<Route path="pre-open-stocks" element={<PreStocks />} />
+						<Route path="pre-open-nifty-50" element={<PreNifty50 />} />
+						<Route path="pre-open-fno" element={<PreFnO />} />
 					</Routes>
 				</div>
 			</div>

@@ -20,11 +20,6 @@ export const appConfig = [
 		icon: 'mdi-table-large'
 	},
 	{
-		title: 'Live Market',
-		routeName: '/live-market',
-		icon: 'mdi-chart-bar'
-	},
-	{
 		title: 'Pre Open',
 		icon: 'mdi-laptop',
 		subRoutes: [
@@ -35,12 +30,15 @@ export const appConfig = [
 			{
 				title: 'Stocks',
 				routeName: '/pre-open-stocks'
+			},
+			{
+				title: 'Nifty 50',
+				routeName: '/pre-open-nifty-50'
+			},
+			{
+				title: 'F&O',
+				routeName: '/pre-open-fno'
 			}
 		]
-	},
-	{
-		title: 'Setup Scripts',
-		routeName: '/setup-scripts',
-		icon: 'mdi-security'
 	}
 ];
