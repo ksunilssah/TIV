@@ -9,6 +9,11 @@
 
 ## VS Code setup
 
+VS Code extensions:
+
+- ESLint
+- Prettier
+
 Add below code in VS Code setting.json
 
 ```
