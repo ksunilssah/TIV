@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { Modal } from 'react-bootstrap';
 import { AgGridReact } from 'ag-grid-react';
-import { getPreStockList } from '../../../service/pre-index-view-service';
+import { getPreStockList } from '../../../service/pre-open-service';
 import {
   callFrequency,
   defaultColDef,

@@ -52,6 +52,74 @@ app.get('/high_momentum', (req, res) => {
   res.send({ ...result });
 });
 
+app.get('/momentum_spike', (req, res) => {
+  const result = LoadJSONFile('momentum-spike.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  res.send({ ...result });
+});
+
+app.get('/pre_open_nifty50', (req, res) => {
+  const result = LoadJSONFile('pre-open-nifty50.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  res.send({ ...result });
+});
+
+app.get('/pre_open_niftybank', (req, res) => {
+  const result = LoadJSONFile('pre-open-nifty-bank.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  res.send({ ...result });
+});
+
+app.get('/pre_open_fo', (req, res) => {
+  const result = LoadJSONFile('pre-open-fno.json');
+  result.long.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = (Math.random() * 5).toFixed(2);
+    item.pChange = (Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  result.short.map((item) => {
+    item.lastPrice = Math.floor(Math.random() * 100);
+    item.changePrice = -(Math.random() * 5).toFixed(2);
+    item.pChange = -(Math.random() * 5).toFixed(2);
+    item.totalTurnover = Math.floor(Math.random() * 1000000);
+  });
+  res.send({ ...result });
+});
+
 app.get('/sectoral_view', (req, res) => {
   const result = LoadJSONFile('sectoral-view.json');
   result.map((item, index) => {
@@ -121,6 +189,20 @@ app.get('/pre_open_sectoral_view', (req, res) => {
       item.changePrice = (Math.random() * 5).toFixed(2);
     }
   });
+  res.send(result);
+});
+
+app.get('/get_header', (req, res) => {
+  const result = LoadJSONFile('header-stock.json');
+  for (const [key, item] of Object.entries(result)) {
+    if (key == 'NIFTY50') {
+      item.ltp = Math.floor(Math.random() * 10000);
+      item.pChange = -Math.floor(Math.random() * 10);
+    } else {
+      item.ltp = Math.floor(Math.random() * 10000);
+      item.pChange = Math.floor(Math.random() * 10);
+    }
+  }
   res.send(result);
 });
 

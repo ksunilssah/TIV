@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import HeaderStockList from './stock-list';
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,17 +25,7 @@ const Header = (props) => {
         >
           <span className="mdi mdi-menu"></span>
         </button>
-        <ul className="navbar-nav w-100">
-          <li className="nav-item w-100">
-            <form className="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search products"
-              />
-            </form>
-          </li>
-        </ul>
+        <HeaderStockList />
 
         <button
           className="navbar-toggler navbar-toggler-right d-lg-none align-self-center"

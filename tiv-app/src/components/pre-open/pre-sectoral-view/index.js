@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PreSectoralGrid from './pre-sectoral-grid';
-import { getPreIndexView } from '../../../service/pre-index-view-service';
+import { getPreIndexView } from '../../../service/pre-open-service';
 import { callFrequency, defaultColDef } from '../../../service/constants';
 import PreSectorViewGraph from './pre-sector-view-graph';
 

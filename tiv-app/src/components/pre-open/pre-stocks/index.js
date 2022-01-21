@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { PreStocksGrid } from './pre-stocks-grid';
-import { getPreOpenStocksList } from '../../../service/pre-index-view-service';
+import { getPreOpenStocksList } from '../../../service/pre-open-service';
 import { callFrequency, defaultColDef } from '../../../service/constants';
 const columnsDetails = {
   columnDefs: [

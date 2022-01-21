@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { PreFnOGrid } from './pre-fno-grid';
-import { getPreFnO } from '../../../service/pre-open-service';
+import { MomentumSpikeGrid } from './momentum-spike';
+import { getMomentumSpike } from '../../../service/momentum-service';
 import { callFrequency, defaultColDef } from '../../../service/constants';
 
 const columnsDetails = {
@@ -42,11 +42,11 @@ const columnsDetails = {
 
 @inject('store')
 @observer
-export default class PreFnO extends Component {
+export default class MomentumSpike extends Component {
   componentDidMount() {
-    getPreFnO();
+    getMomentumSpike();
     this.interval = setInterval(function () {
-      getPreFnO();
+      getMomentumSpike();
     }, callFrequency);
   }
 
@@ -55,20 +55,20 @@ export default class PreFnO extends Component {
   }
 
   render() {
-    const { preOpenFnO } = this.props.store;
+    const { momentumSpike } = this.props.store;
     return (
       <div className="row high-momentum custom-grid">
-        <PreFnOGrid
+        <MomentumSpikeGrid
           columnDefs={columnsDetails.columnDefs}
-          rowData={preOpenFnO.long}
+          rowData={momentumSpike.long}
           defaultColDef={defaultColDef}
-          title="Pre Open F&O Stock for long"
+          title="Momentum Spike for Long"
         />
-        <PreFnOGrid
+        <MomentumSpikeGrid
           columnDefs={columnsDetails.columnDefs}
-          rowData={preOpenFnO.short}
+          rowData={momentumSpike.short}
           defaultColDef={defaultColDef}
-          title="Pre Open F&O Stock for short"
+          title="Momentum Spike for short"
         />
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { PreNiftyGrid } from './pre-nifty-grid';
-import { getHighMomentum } from '../../../service/high-momentum-service';
+import { getPreOpenNifty50 } from '../../../service/pre-open-service';
 import { callFrequency, defaultColDef } from '../../../service/constants';
 
 const columnsDetails = {
@@ -44,9 +44,9 @@ const columnsDetails = {
 @observer
 export default class PreNifty50 extends Component {
   componentDidMount() {
-    getHighMomentum();
+    getPreOpenNifty50();
     this.interval = setInterval(function () {
-      getHighMomentum();
+      getPreOpenNifty50();
     }, callFrequency);
   }
 
@@ -55,20 +55,20 @@ export default class PreNifty50 extends Component {
   }
 
   render() {
-    const { highMomentum } = this.props.store;
+    const { preOpenNifty50 } = this.props.store;
     return (
       <div className="row high-momentum custom-grid">
         <PreNiftyGrid
           columnDefs={columnsDetails.columnDefs}
-          rowData={highMomentum.long}
+          rowData={preOpenNifty50.long}
           defaultColDef={defaultColDef}
-          title="Nifty 50 Stock for long"
+          title="Pre Open Nifty 50 Stock for long"
         />
         <PreNiftyGrid
           columnDefs={columnsDetails.columnDefs}
-          rowData={highMomentum.short}
+          rowData={preOpenNifty50.short}
           defaultColDef={defaultColDef}
-          title="Nifty 50 Stock for short"
+          title="Pre Open Nifty 50 Stock for short"
         />
       </div>
     );

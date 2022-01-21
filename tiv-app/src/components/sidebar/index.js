@@ -35,7 +35,7 @@ const Menu = () => {
               ? 'nav-item menu-items active'
               : 'nav-item menu-items'
           }
-          key={routeName + index}
+          key={title + index}
         >
           <NavLink
             className="nav-link"

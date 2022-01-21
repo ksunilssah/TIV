@@ -10,9 +10,18 @@ export const appConfig = [
     icon: 'mdi-laptop',
   },
   {
-    title: 'High Momentum',
-    routeName: '/high-momentum',
+    title: 'Momentum',
     icon: 'mdi-playlist-play',
+    subRoutes: [
+      {
+        title: 'Momentum Spike',
+        routeName: '/momentum-spike',
+      },
+      {
+        title: 'High Momentum',
+        routeName: '/high-momentum',
+      },
+    ],
   },
   {
     title: 'Sectoral View',
@@ -30,6 +39,10 @@ export const appConfig = [
       {
         title: 'Stocks',
         routeName: '/pre-open-stocks',
+      },
+      {
+        title: 'Bank Nifty',
+        routeName: '/pre-open-bank-nifty',
       },
       {
         title: 'Nifty 50',

@@ -458,3 +458,14 @@
   max-width: 800px;
   margin: 0 auto;
 }
+
+.header-stock-list {
+  li {
+    padding-right: 25px;
+    padding-left: 25px;
+
+    .icon {
+      margin: -8px 0 0 10px;
+    }
+  }
+}

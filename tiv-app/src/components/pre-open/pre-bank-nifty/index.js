@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { MomentumGrid } from './momentum-grid';
-import { getHighMomentum } from '../../service/high-momentum-service';
-import { callFrequency, defaultColDef } from '../../service/constants';
+import { PreBankNiftyGrid } from './pre-bank-nifty-grid';
+import { getPreOpenNiftyBank } from '../../../service/pre-open-service';
+import { callFrequency, defaultColDef } from '../../../service/constants';
 
 const columnsDetails = {
   columnDefs: [
@@ -42,11 +42,11 @@ const columnsDetails = {
 
 @inject('store')
 @observer
-export default class HighMomentum extends Component {
+export default class PreBankNifty extends Component {
   componentDidMount() {
-    getHighMomentum();
+    getPreOpenNiftyBank();
     this.interval = setInterval(function () {
-      getHighMomentum();
+      getPreOpenNiftyBank();
     }, callFrequency);
   }
 
@@ -55,20 +55,20 @@ export default class HighMomentum extends Component {
   }
 
   render() {
-    const { highMomentum } = this.props.store;
+    const { preOpenNiftyBank } = this.props.store;
     return (
       <div className="row high-momentum custom-grid">
-        <MomentumGrid
+        <PreBankNiftyGrid
           columnDefs={columnsDetails.columnDefs}
-          rowData={highMomentum.long}
+          rowData={preOpenNiftyBank.long}
           defaultColDef={defaultColDef}
-          title="Momentum Stock for Long"
+          title="Pre Open Bank Nifty Stock for long"
         />
-        <MomentumGrid
+        <PreBankNiftyGrid
           columnDefs={columnsDetails.columnDefs}
-          rowData={highMomentum.short}
+          rowData={preOpenNiftyBank.short}
           defaultColDef={defaultColDef}
-          title="Momentum Stock for short"
+          title="Pre Open Bank Nifty Stock for short"
         />
       </div>
     );
