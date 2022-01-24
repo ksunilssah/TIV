@@ -197,10 +197,10 @@ app.get('/get_header', (req, res) => {
   for (const [key, item] of Object.entries(result)) {
     if (key == 'NIFTY50') {
       item.ltp = Math.floor(Math.random() * 10000);
-      item.pChange = -Math.floor(Math.random() * 10);
+      item.pChange = -(Math.random() * 2).toFixed(2);
     } else {
       item.ltp = Math.floor(Math.random() * 10000);
-      item.pChange = Math.floor(Math.random() * 10);
+      item.pChange = (Math.random() * 2).toFixed(2);
     }
   }
   res.send(result);

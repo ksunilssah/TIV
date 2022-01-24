@@ -27,8 +27,10 @@ export default class HeaderStockList extends Component {
       const green = 'text-success ml-2 mb-0 font-weight-medium';
       const redIcon = 'icon icon-box-danger';
       const greenIcon = 'icon icon-box-success';
+      const upArrow = 'mdi mdi-arrow-top-right icon-item';
+      const downArrow = 'mdi mdi-arrow-bottom-right icon-item';
 
-      const isNegative = Math.sign(parseInt(pChange)) === -1;
+      const isNegative = Math.sign(pChange) <= -1;
       const item = (
         <li className="nav-item d-lg-block">
           <div className="row">
@@ -39,7 +41,7 @@ export default class HeaderStockList extends Component {
               <p className={isNegative ? red : green}>{pChange}%</p>
             </div>
             <div className={isNegative ? redIcon : greenIcon}>
-              <span className="mdi mdi-arrow-top-right icon-item"></span>
+              <span className={isNegative ? downArrow : upArrow}></span>
             </div>
           </div>
         </li>

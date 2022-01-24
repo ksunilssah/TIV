@@ -1,6 +1,6 @@
-export const apiURL = 'https://localhost:3000/';
-//export const apiURL = 'https://decode.tradinginveins.com/api/';
-
+// export const apiURL = 'https://localhost:3000/';
+export const apiURL = 'https://decode.tradinginveins.com/api/';
+//export const apiURL = 'https://tiv.arshendemo.xyz/api/';
 export const tradingViewURl = 'https://www.tradingview.com';
 
 export const highMomentum = 'high_momentum';
@@ -17,7 +17,7 @@ export const preOpenNiftyBank = 'pre_open_niftybank';
 export const preOpenFnO = 'pre_open_fo';
 export const getHeader = 'get_header';
 
-export const callFrequency = 6000;
+export const callFrequency = 60000;
 
 export const defaultColDef = {
   sortable: true,
