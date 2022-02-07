@@ -218,6 +218,11 @@ app.get('/pre_open_index_view/:index', (req, res) => {
   res.send(result);
 });
 
+app.get('/get_candle/:id', (req, res) => {
+  const result = LoadJSONFile('15-minute-breakout.json');
+  res.send(result);
+});
+
 const options = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem'),

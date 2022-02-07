@@ -15,6 +15,7 @@ import PreIndexView from './components/pre-open/pre-sectoral-view';
 import PreNifty50 from './components/pre-open/pre-nifty-50';
 import PreFnO from './components/pre-open/pre-fno';
 import PreBankNifty from './components/pre-open/pre-bank-nifty';
+import Breakout from './components/momentum/breakout';
 
 const App = () => {
   const [isOpen, openMobileMenu] = useState(false);
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="pre-open-nifty-50" element={<PreNifty50 />} />
               <Route path="pre-open-fno" element={<PreFnO />} />
               <Route path="pre-open-bank-nifty" element={<PreBankNifty />} />
+              <Route path="breakout-15" element={<Breakout />} />
             </Routes>
           </div>
         </div>

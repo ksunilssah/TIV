@@ -15,6 +15,7 @@ class Store {
   preOpenNiftyBank = {};
   preOpenFnO = {};
   headerStockList = {};
+  breakOut15Min = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -71,6 +72,10 @@ class Store {
 
   updatePreOpenStockList = (stockList) => {
     this.preOpenStockList = stockList;
+  };
+
+  updateBreakOut15Min = (breakoutList) => {
+    this.breakOut15Min = breakoutList;
   };
 }
 

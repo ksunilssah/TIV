@@ -21,6 +21,10 @@ export const appConfig = [
         title: 'High Momentum',
         routeName: '/high-momentum',
       },
+      {
+        title: 'Breakout (15min)',
+        routeName: '/breakout-15',
+      },
     ],
   },
   {
