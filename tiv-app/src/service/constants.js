@@ -2,7 +2,7 @@
 export const apiURL = 'https://decode.tradinginveins.com/api/';
 //export const apiURL = 'https://tiv.arshendemo.xyz/api/';
 export const tradingViewURl = 'https://www.tradingview.com';
-
+export const loginURL = '/login';
 export const highMomentum = 'high_momentum';
 export const momentumSpike = 'momentum_spike';
 export const volumeShocker = 'volume_shocker';

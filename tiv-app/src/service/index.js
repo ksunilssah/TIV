@@ -1,16 +1,28 @@
 import axios from 'axios';
-import { apiURL } from './constants';
+import { apiURL, loginURL } from './constants';
 class ApiService {
   async get(api) {
     const url = apiURL + api;
-    const response = await axios.get(url);
-    return response;
+    try {
+      const response = await axios.get(url);
+      return response;
+    } catch (error) {
+      if (error.response.status === 401) {
+        window.location.href = loginURL;
+      }
+    }
   }
 
   async submit(api, query) {
     const url = apiURL + api;
-    const response = await axios.post(url, query);
-    return response;
+    try {
+      const response = await axios.post(url, query);
+      return response;
+    } catch (error) {
+      if (error.response.status === 401) {
+        window.location.href = loginURL;
+      }
+    }
   }
 }
 const apiService = new ApiService();
