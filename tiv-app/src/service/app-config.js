@@ -28,6 +28,20 @@ export const appConfig = [
     ],
   },
   {
+    title: 'Options',
+    icon: 'mdi-playlist-play',
+    subRoutes: [
+      {
+        title: 'Trending OI',
+        routeName: '/trending-oi',
+      },
+      {
+        title: 'EGO Strategy',
+        routeName: '/ego-strategy',
+      },
+    ],
+  },
+  {
     title: 'Sectoral View',
     routeName: '/sectoral-view',
     icon: 'mdi-table-large',

@@ -32,7 +32,7 @@ export default class HeaderStockList extends Component {
 
       const isNegative = Math.sign(pChange) <= -1;
       const item = (
-        <li className="nav-item d-lg-block">
+        <li key={key} className="nav-item d-lg-block">
           <div className="row">
             <div className="d-flex align-items-center align-self-start">
               <h5 className="mb-0">

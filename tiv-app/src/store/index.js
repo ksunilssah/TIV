@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-
+import { getExpiryDate } from '../helpers/date-helper';
 class Store {
   appLoadingStatus = false;
   volumeShocker = [];
@@ -16,6 +16,16 @@ class Store {
   preOpenFnO = {};
   headerStockList = {};
   breakOut15Min = [];
+  trendingOI = {
+    symbol: 'NIFTY',
+    expiry: getExpiryDate(),
+    time_interval: 5,
+    strikes: [],
+  };
+
+  strikesList = [];
+  trendingOIResult = [];
+  selectedStrikesList = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -76,6 +86,22 @@ class Store {
 
   updateBreakOut15Min = (breakoutList) => {
     this.breakOut15Min = breakoutList;
+  };
+
+  updateTrendingOI = (OIData) => {
+    this.trendingOI = { ...this.trendingOI, ...OIData };
+  };
+
+  updateStrikesList = (strikes) => {
+    this.strikesList = strikes;
+  };
+
+  updateTrendingOIResult = (oiData) => {
+    this.trendingOIResult = oiData;
+  };
+
+  updateSelectedStrikes = (strikeList) => {
+    this.selectedStrikesList = strikeList;
   };
 }
 

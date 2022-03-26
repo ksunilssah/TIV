@@ -1,0 +1,35 @@
+.trending-oi,
+.table-responsive {
+  height: 100%;
+}
+
+.oi-result-grid {
+  height: calc(100% - 90px);
+  padding: 0;
+  margin-top: -5px;
+
+  .card-body {
+    padding: 15px;
+  }
+}
+
+.strike-list {
+  list-style: none;
+  li {
+    display: inline-block;
+    padding-right: 20px;
+    label.form-check-label {
+      color: #fff;
+    }
+  }
+}
+.strike-overlay {
+  .strike-btn {
+    text-align: center;
+  }
+
+  .modal-title {
+    width: 100%;
+    text-align: center;
+  }
+}

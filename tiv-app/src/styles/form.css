@@ -1,0 +1,27 @@
+select.form-control {
+  color: #fff;
+  padding-right: 15px;
+}
+
+select.form-control:focus,
+input[type='date'].form-control {
+  color: #fff;
+}
+
+.submit-btn {
+  padding: 10px 0;
+}
+
+.strike-btn {
+  margin-top: 29px;
+}
+
+@media (min-width: 992px) {
+  .submit-btn {
+    margin-top: 26px;
+  }
+
+  .time-interval {
+    width: 100px;
+  }
+}
