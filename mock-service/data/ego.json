@@ -1,0 +1,342 @@
+[
+  {
+    "strike": 16500,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16550,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16600,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16650,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16700,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16750,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16800,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16850,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16900,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 16950,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17000,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17050,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17100,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17150,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17200,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17250,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17300,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17350,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17400,
+    "PE": {
+      "target": 160.55,
+      "status": "",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  },
+  {
+    "strike": 17450,
+    "PE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    },
+    "CE": {
+      "target": 160.55,
+      "status": "Hit on 09:35",
+      "ltp": 1,
+      "low": 1,
+      "high": 1
+    }
+  }
+]

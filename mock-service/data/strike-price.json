@@ -1,0 +1,22 @@
+[
+  { "strike": 16500, "selected": false },
+  { "strike": 16550, "selected": false },
+  { "strike": 16600, "selected": false },
+  { "strike": 16650, "selected": false },
+  { "strike": 16700, "selected": false },
+  { "strike": 16750, "selected": true },
+  { "strike": 16800, "selected": true },
+  { "strike": 16850, "selected": true },
+  { "strike": 16900, "selected": true },
+  { "strike": 16950, "selected": true },
+  { "strike": 17000, "selected": true },
+  { "strike": 17050, "selected": true },
+  { "strike": 17100, "selected": true },
+  { "strike": 17150, "selected": true },
+  { "strike": 17200, "selected": true },
+  { "strike": 17250, "selected": false },
+  { "strike": 17300, "selected": false },
+  { "strike": 17350, "selected": false },
+  { "strike": 17400, "selected": false },
+  { "strike": 17450, "selected": false }
+]

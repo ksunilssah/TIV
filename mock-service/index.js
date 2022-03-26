@@ -223,6 +223,16 @@ app.get('/get_candle/:id', (req, res) => {
   res.send(result);
 });
 
+app.get('/get_strikes', (req, res) => {
+  const result = LoadJSONFile('strike-price.json');
+  res.send(result);
+});
+
+app.post('/get_trending_oi', (req, res) => {
+  const result = LoadJSONFile('oi.json');
+  res.send(result);
+});
+
 const options = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem'),
@@ -232,3 +242,16 @@ const server = https.createServer(options, app);
 server.listen(port, () => {
   console.log(`App listening at https://localhost:${port}`);
 });
+
+/*
+API: get_trending_oi
+payload:
+		{	symbol: BANKNIFTY,
+			expiry: 2022-02-17
+			time_interval: 3, 5, 15, 30, 45, 60
+			strikes: [16500,16550,16700]
+			date: 2022-02-17
+    }
+
+    get_strikes
+*/
