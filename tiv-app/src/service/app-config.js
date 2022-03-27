@@ -35,10 +35,6 @@ export const appConfig = [
         title: 'Trending OI',
         routeName: '/trending-oi',
       },
-      {
-        title: 'EGO Strategy',
-        routeName: '/ego-strategy',
-      },
     ],
   },
   {

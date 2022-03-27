@@ -91,6 +91,7 @@ export default class QueryPanel extends Component {
                       <option value="10">10</option>
                       <option value="15">15</option>
                       <option value="45">45</option>
+                      <option value="60">60</option>
                     </select>
                   </div>
                   <div className="col-xl-2 col-sm-2">

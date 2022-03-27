@@ -45,27 +45,31 @@ export const getTrendingOIResult = async () => {
           const intCE = parseInt(ce);
           const intPE = parseInt(pe);
           const nextRow = oiData[index + 1];
+          const OIDiff = intPE - intCE;
           let ceCellColor;
           let peCellColor;
+          let oiDiffNextRow;
+          let oiDiffColor = 'white';
           if (nextRow) {
-            ceCellColor = Math.sign(parseInt(nextRow.ce) - ce)
-              ? 'green'
-              : 'red';
-
-            peCellColor = Math.sign(parseInt(nextRow.pe) - pe)
-              ? 'green'
-              : 'red';
+            ceCellColor = ce - parseInt(nextRow.ce) > 0 ? 'green' : 'red';
+            peCellColor = pe - parseInt(nextRow.pe) > 0 ? 'green' : 'red';
+            oiDiffNextRow = parseInt(nextRow.pe) - parseInt(nextRow.ce);
+            oiDiffColor = OIDiff - oiDiffNextRow > 0 ? 'green' : 'red';
           }
-
+          const OIDiffView = OIDiff - oiDiffNextRow;
           return {
             time: date[1],
             ce,
             pe,
             ltp,
-            OIDiff: intPE - intCE,
+            OIDiff,
+            oiDiffColor,
             pcr: (intPE / intCE).toFixed(2),
             ceCellColor,
             peCellColor,
+            changeInDirection: OIDiffView,
+            OIDiffView: OIDiffView >= 0 ? 'Up' : 'Down',
+            sentiments: OIDiff >= 0 ? 'Bullish' : 'Bearish',
           };
         });
 

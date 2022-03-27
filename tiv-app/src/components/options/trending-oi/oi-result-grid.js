@@ -9,14 +9,17 @@ const columnsDetails = {
       headerName: 'Time',
       field: 'time',
       rowDrag: true,
+      width: '150px',
     },
     {
       headerName: 'LTP',
       field: 'ltp',
+      width: '100px',
     },
     {
       field: 'ce',
       headerName: 'Change In CE',
+      width: '150px',
       cellStyle: (params) => {
         const { ceCellColor } = params.data;
         return {
@@ -27,6 +30,7 @@ const columnsDetails = {
     {
       headerName: 'Change in PE',
       field: 'pe',
+      width: '150px',
       cellStyle: (params) => {
         const { peCellColor } = params.data;
         return {
@@ -37,12 +41,38 @@ const columnsDetails = {
     {
       headerName: 'Diff in OI',
       field: 'OIDiff',
-      cellStyle: (params) =>
-        params.value < 0 ? { color: 'red' } : { color: 'white' },
+      width: '130px',
+      cellStyle: (params) => {
+        const { oiDiffColor } = params.data;
+        return {
+          color: oiDiffColor,
+        };
+      },
     },
     {
+      headerName: 'Direction',
+      field: 'changeInDirection',
+      width: '130px',
+      cellStyle: (params) =>
+        params.value >= 0 ? { color: 'green' } : { color: 'red' },
+    },
+
+    {
+      headerName: 'View',
+      width: '100px',
+      field: 'OIDiffView',
+    },
+
+    {
+      width: '100px',
       headerName: 'PCR',
       field: 'pcr',
+    },
+
+    {
+      headerName: 'Sentiments',
+      field: 'sentiments',
+      width: '100px',
     },
   ],
 };
