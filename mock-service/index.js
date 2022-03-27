@@ -244,6 +244,8 @@ server.listen(port, () => {
 });
 
 /*
+Up down should be button
+zero handling in case of zero color should be white.
 API: get_trending_oi
 payload:
 		{	symbol: BANKNIFTY,
