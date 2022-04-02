@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import IndexView from './index-view';
 
 ChartJS.register(
   CategoryScale,
@@ -18,41 +19,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-export const options = {
-  responsive: true,
-  //indexAxis: 'y',
-  color: '#fff',
-  scales: {
-    y: {
-      grid: {
-        color: 'rgba(255, 255, 255, .1)',
-      },
-      ticks: {
-        color: '#fff',
-      },
-    },
-    x: {
-      grid: {
-        color: 'rgba(255, 255, 255, .1)',
-      },
-      ticks: {
-        color: '#fff',
-      },
-    },
-  },
-  plugins: {
-    legend: {
-      position: 'none',
-    },
-    title: {
-      display: true,
-      text: 'Nifty Index',
-      color: '#fff',
-      fontSize: 14,
-    },
-  },
-};
 
 const getChartData = (rowData) => {
   let labels = [];
@@ -88,21 +54,87 @@ const getChartData = (rowData) => {
     ],
   };
 };
+class SectorViewGraph extends Component {
+  state = {
+    isIndexViewVisitable: false,
+    selectedIndex: '',
+  };
+  getOptions = (barData) => {
+    const options = {
+      responsive: true,
+      //indexAxis: 'y',
+      color: '#fff',
+      scales: {
+        y: {
+          grid: {
+            color: 'rgba(255, 255, 255, .1)',
+          },
+          ticks: {
+            color: '#fff',
+          },
+        },
+        x: {
+          grid: {
+            color: 'rgba(255, 255, 255, .1)',
+          },
+          ticks: {
+            color: '#fff',
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          position: 'none',
+        },
+        title: {
+          display: true,
+          text: 'Nifty Index',
+          color: '#fff',
+          fontSize: 14,
+        },
+      },
+      onClick: (evt, elements) => {
+        const selectedIndex = barData.labels[elements[0].index];
+        this.setState({
+          selectedIndex,
+          isIndexViewVisitable: true,
+        });
+      },
+    };
+    return options;
+  };
 
-const SectorViewGraph = (props) => {
-  const { rowData } = props;
+  onDialogClose = () => {
+    this.setState({
+      isIndexViewVisitable: false,
+    });
+  };
 
-  return (
-    <div className="col-lg-6 grid-margin stretch-card">
-      <div className="card">
-        <div className="card-body">
-          <div className="table-responsive">
-            <Bar options={options} data={getChartData(rowData)} />
+  render() {
+    const { rowData } = this.props;
+    const barData = getChartData(rowData);
+    const { isIndexViewVisitable, selectedIndex } = this.state;
+    return (
+      <>
+        <div className="col-lg-6 grid-margin stretch-card">
+          <div className="card">
+            <div className="card-body">
+              <div className="table-responsive">
+                <Bar options={this.getOptions(barData)} data={barData} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
+        {isIndexViewVisitable && (
+          <IndexView
+            onDialogClose={this.onDialogClose}
+            showDialog={isIndexViewVisitable}
+            selectedIndex={selectedIndex}
+          />
+        )}
+      </>
+    );
+  }
+}
 
 export default SectorViewGraph;

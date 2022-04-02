@@ -3,6 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import { inject, observer } from 'mobx-react';
 import { defaultColDef, callFrequency } from '../../../service/constants';
 import { getTrendingOIResult } from '../../../service/trending-oi-service';
+
 const columnsDetails = {
   columnDefs: [
     {
@@ -61,6 +62,7 @@ const columnsDetails = {
       headerName: 'View',
       width: '100px',
       field: 'OIDiffView',
+      // cellRenderer: viewColumn,
     },
 
     {

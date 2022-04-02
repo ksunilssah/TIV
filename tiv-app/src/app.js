@@ -7,7 +7,7 @@ import VolumeShocker from './components/volume-shockers';
 import { Sidebar } from './components/sidebar';
 import Header from './components/header';
 import HighMomentum from './components/momentum/high-momentum';
-import MomentumSpike from './components/momentum/momentum-spike';
+// import MomentumSpike from './components/momentum/momentum-spike';
 import SectoralView from './components/sectoral-view';
 import MarketStatus from './components/market-status';
 import PreStocks from './components/pre-open/pre-stocks';
@@ -30,7 +30,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<MarketStatus />} />
               <Route path="/high-momentum" element={<HighMomentum />} />
-              <Route path="/momentum-spike" element={<MomentumSpike />} />
+              {/* <Route path="/momentum-spike" element={<MomentumSpike />} /> */}
               <Route path="/trending-oi" element={<TradingOI />}></Route>
               <Route path="/volume-shocker" element={<VolumeShocker />} />
               <Route path="/sectoral-view" element={<SectoralView />} />

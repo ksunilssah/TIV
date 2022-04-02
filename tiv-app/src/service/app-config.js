@@ -10,13 +10,13 @@ export const appConfig = [
     icon: 'mdi-laptop',
   },
   {
-    title: 'Momentum',
+    title: 'Momentum Spike',
     icon: 'mdi-playlist-play',
     subRoutes: [
-      {
-        title: 'Momentum Spike',
-        routeName: '/momentum-spike',
-      },
+      // {
+      //   title: 'Momentum Spike',
+      //   routeName: '/momentum-spike',
+      // },
       {
         title: 'High Momentum',
         routeName: '/high-momentum',

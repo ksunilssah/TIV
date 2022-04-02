@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(
   CategoryScale,
@@ -19,7 +20,7 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
+const getOptions = (navigate) => ({
   responsive: true,
   //indexAxis: 'y',
   color: '#fff',
@@ -52,7 +53,10 @@ export const options = {
       fontSize: 14,
     },
   },
-};
+  onClick: () => {
+    navigate('/sectoral-view');
+  },
+});
 
 const getChartData = (labels, data) => {
   return {
@@ -85,13 +89,16 @@ const getChartData = (labels, data) => {
 
 const SectorViewGraph = (props) => {
   const { labels = [], data = [] } = props;
-
+  let navigate = useNavigate();
   return (
     <div className="col-12 grid-margin">
       <div className="card">
         <div className="card-body">
           <div className="table-responsive market-view-height">
-            <Bar options={options} data={getChartData(labels, data)} />
+            <Bar
+              options={getOptions(navigate)}
+              data={getChartData(labels, data)}
+            />
           </div>
         </div>
       </div>
