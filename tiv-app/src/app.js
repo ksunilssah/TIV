@@ -28,18 +28,21 @@ const App = () => {
         <div className="main-panel">
           <div className="content-wrapper">
             <Routes>
-              <Route path="/" element={<MarketStatus />} />
-              <Route path="/high-momentum" element={<HighMomentum />} />
-              {/* <Route path="/momentum-spike" element={<MomentumSpike />} /> */}
-              <Route path="/trending-oi" element={<TradingOI />}></Route>
-              <Route path="/volume-shocker" element={<VolumeShocker />} />
-              <Route path="/sectoral-view" element={<SectoralView />} />
-              <Route path="/pre-open-index" element={<PreIndexView />} />
-              <Route path="/pre-open-stocks" element={<PreStocks />} />
-              <Route path="/pre-open-nifty-50" element={<PreNifty50 />} />
-              <Route path="/pre-open-fno" element={<PreFnO />} />
-              <Route path="/pre-open-bank-nifty" element={<PreBankNifty />} />
-              <Route path="/breakout-15" element={<Breakout />} />
+              <Route path="/app" element={<MarketStatus />} />
+              <Route path="/app/high-momentum" element={<HighMomentum />} />
+              {/* <Route path="/app/momentum-spike" element={<MomentumSpike />} /> */}
+              <Route path="/app/trending-oi" element={<TradingOI />}></Route>
+              <Route path="/app/volume-shocker" element={<VolumeShocker />} />
+              <Route path="/app/sectoral-view" element={<SectoralView />} />
+              <Route path="/app/pre-open-index" element={<PreIndexView />} />
+              <Route path="/app/pre-open-stocks" element={<PreStocks />} />
+              <Route path="/app/pre-open-nifty-50" element={<PreNifty50 />} />
+              <Route path="/app/pre-open-fno" element={<PreFnO />} />
+              <Route
+                path="/app/pre-open-bank-nifty"
+                element={<PreBankNifty />}
+              />
+              <Route path="/app/breakout-15" element={<Breakout />} />
             </Routes>
           </div>
         </div>

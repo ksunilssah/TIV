@@ -1,4 +1,4 @@
-// export const apiURL = 'https://localhost:3000/';
+//export const apiURL = 'https://localhost:3000/';
 export const apiURL = 'https://decode.tradinginveins.com/api/';
 export const tradingViewURl = 'https://www.tradingview.com';
 export const loginURL = '/login';

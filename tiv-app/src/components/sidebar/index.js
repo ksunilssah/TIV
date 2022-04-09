@@ -6,7 +6,7 @@ import { appConfig } from '../../service/app-config';
 const Menu = () => {
   const location = useLocation();
   const { pathname } = location;
-  const splitLocation = pathname.split('/');
+  const splitLocation = pathname.split('/app/');
   const activeLink = `/${splitLocation[1]}`;
 
   return appConfig.map(({ routeName, title, icon, subRoutes }, index) => {
@@ -25,7 +25,7 @@ const Menu = () => {
       ));
 
       const activeItem = subRoutes.findIndex(
-        ({ routeName }) => routeName === activeLink
+        ({ routeName }) => routeName.split('/app')[1] === activeLink
       );
 
       return (

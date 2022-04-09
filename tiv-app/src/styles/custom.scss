@@ -8,6 +8,25 @@
 .navbar .navbar-brand-wrapper .navbar-brand {
   color: #fff;
 }
+.sidebar .sidebar-brand-wrapper .sidebar-brand {
+  margin: 0;
+  padding: 0;
+  img {
+    width: 80%;
+    height: auto;
+  }
+}
+@media (max-width: 991px) {
+  .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+    margin: 0 0 0 5px;
+    padding: 0;
+    img {
+      width: 98%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+}
 
 .custom-grid {
   &.row {
@@ -479,6 +498,23 @@
     }
     .form-group {
       margin: 0;
+    }
+  }
+}
+
+@media (max-width: 695px) {
+  .navbar .navbar-brand-wrapper {
+    width: 55px;
+  }
+  .navbar .navbar-menu-wrapper {
+    width: calc(100% - 55px);
+    padding-left: 0;
+
+    .icon {
+      display: none;
+    }
+    h5 {
+      font-size: 12px;
     }
   }
 }

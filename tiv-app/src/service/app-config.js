@@ -1,12 +1,12 @@
 export const appConfig = [
   {
     title: 'Market Status',
-    routeName: '/',
+    routeName: '/app',
     icon: 'mdi-speedometer',
   },
   {
     title: 'Volume Shockers',
-    routeName: '/volume-shocker',
+    routeName: '/app/volume-shocker',
     icon: 'mdi-laptop',
   },
   {
@@ -19,11 +19,11 @@ export const appConfig = [
       // },
       {
         title: 'High Momentum',
-        routeName: '/high-momentum',
+        routeName: '/app/high-momentum',
       },
       {
         title: 'Breakout (15min)',
-        routeName: '/breakout-15',
+        routeName: '/app/breakout-15',
       },
     ],
   },
@@ -33,13 +33,13 @@ export const appConfig = [
     subRoutes: [
       {
         title: 'Trending OI',
-        routeName: '/trending-oi',
+        routeName: '/app/trending-oi',
       },
     ],
   },
   {
     title: 'Sectoral View',
-    routeName: '/sectoral-view',
+    routeName: '/app/sectoral-view',
     icon: 'mdi-table-large',
   },
   {
@@ -48,23 +48,23 @@ export const appConfig = [
     subRoutes: [
       {
         title: 'Index',
-        routeName: '/pre-open-index',
+        routeName: '/app/pre-open-index',
       },
       {
         title: 'Stocks',
-        routeName: '/pre-open-stocks',
+        routeName: '/app/pre-open-stocks',
       },
       {
         title: 'Bank Nifty',
-        routeName: '/pre-open-bank-nifty',
+        routeName: '/app/pre-open-bank-nifty',
       },
       {
         title: 'Nifty 50',
-        routeName: '/pre-open-nifty-50',
+        routeName: '/app/pre-open-nifty-50',
       },
       {
         title: 'F&O',
-        routeName: '/pre-open-fno',
+        routeName: '/app/pre-open-fno',
       },
     ],
   },

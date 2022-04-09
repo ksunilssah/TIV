@@ -37,8 +37,9 @@ const columnsDetails = {
       width: 100,
     },
     {
-      headerName: 'Volume',
+      headerName: 'Volume (Million)',
       field: 'totalTurnover',
+      cellRenderer: (params) => (parseInt(params.value) / 1000000).toFixed(3),
     },
   ],
 };
