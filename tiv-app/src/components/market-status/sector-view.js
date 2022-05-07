@@ -23,6 +23,7 @@ ChartJS.register(
 const getOptions = (navigate) => ({
   responsive: true,
   //indexAxis: 'y',
+  maintainAspectRatio: false,
   color: '#fff',
   scales: {
     y: {
@@ -54,7 +55,7 @@ const getOptions = (navigate) => ({
     },
   },
   onClick: () => {
-    navigate('/sectoral-view');
+    navigate('/app/sectoral-view');
   },
 });
 

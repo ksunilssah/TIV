@@ -35,6 +35,10 @@ export const appConfig = [
         title: 'Trending OI',
         routeName: '/app/trending-oi',
       },
+      {
+        title: 'OI Compass',
+        routeName: '/app/oi-compass',
+      },
     ],
   },
   {

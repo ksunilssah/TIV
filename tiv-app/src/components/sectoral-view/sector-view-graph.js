@@ -62,7 +62,8 @@ class SectorViewGraph extends Component {
   getOptions = (barData) => {
     const options = {
       responsive: true,
-      //indexAxis: 'y',
+      indexAxis: 'y',
+      maintainAspectRatio: false,
       color: '#fff',
       scales: {
         y: {
@@ -119,7 +120,7 @@ class SectorViewGraph extends Component {
         <div className="col-lg-6 grid-margin stretch-card">
           <div className="card">
             <div className="card-body">
-              <div className="table-responsive">
+              <div className="sectoral-view-graph">
                 <Bar options={this.getOptions(barData)} data={barData} />
               </div>
             </div>

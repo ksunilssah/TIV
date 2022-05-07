@@ -17,6 +17,7 @@ import PreFnO from './components/pre-open/pre-fno';
 import PreBankNifty from './components/pre-open/pre-bank-nifty';
 import Breakout from './components/momentum/breakout';
 import TradingOI from './components/options/trending-oi';
+import OICompass from './components/options/oi-compass';
 const App = () => {
   const [isOpen, openMobileMenu] = useState(false);
 
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/app/high-momentum" element={<HighMomentum />} />
               {/* <Route path="/app/momentum-spike" element={<MomentumSpike />} /> */}
               <Route path="/app/trending-oi" element={<TradingOI />}></Route>
+              <Route path="/app/oi-compass" element={<OICompass />}></Route>
               <Route path="/app/volume-shocker" element={<VolumeShocker />} />
               <Route path="/app/sectoral-view" element={<SectoralView />} />
               <Route path="/app/pre-open-index" element={<PreIndexView />} />

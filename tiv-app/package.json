@@ -25,6 +25,7 @@
     "lodash": "^4.17.21",
     "mobx": "^6.3.9",
     "mobx-react": "^7.2.1",
+    "multi-range-slider-react": "^1.0.7",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.4",
     "react-chartjs-2": "^4.0.0",
