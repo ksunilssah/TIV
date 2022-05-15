@@ -20,45 +20,27 @@
     "strike": 16550,
     "PE": {
       "target": 160.55,
-      "status": "",
+      "status": "Hit on 09:35",
       "ltp": 1,
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 16600,
     "PE": {
       "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
-    "CE": {
-      "target": 160.55,
       "status": "Hit on 09:35",
       "ltp": 1,
       "low": 1,
       "high": 1
-    }
+    },
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 16650,
-    "PE": {
-      "target": 160.55,
-      "status": "Hit on 09:35",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
     "CE": {
       "target": 160.55,
       "status": "Hit on 09:35",
@@ -76,30 +58,12 @@
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 16750,
-    "PE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 16800,
@@ -122,7 +86,7 @@
     "strike": 16850,
     "PE": {
       "target": 160.55,
-      "status": "",
+      "status": "Hit on 09:35",
       "ltp": 1,
       "low": 1,
       "high": 1
@@ -137,37 +101,19 @@
   },
   {
     "strike": 16900,
-    "PE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 16950,
     "PE": {
       "target": 160.55,
-      "status": "",
+      "status": "Hit on 09:35",
       "ltp": 1,
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 17000,
@@ -188,16 +134,10 @@
   },
   {
     "strike": 17050,
-    "PE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
     "CE": {
       "target": 160.55,
-      "status": "",
+      "status": "Hit on 09:35",
       "ltp": 1,
       "low": 1,
       "high": 1
@@ -205,33 +145,15 @@
   },
   {
     "strike": 17100,
-    "PE": {
-      "target": 160.55,
-      "status": "Hit on 09:35",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 17150,
-    "PE": {
-      "target": 160.55,
-      "status": "Hit on 09:35",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
     "CE": {
       "target": 160.55,
-      "status": "",
+      "status": "Hit on 09:35",
       "ltp": 1,
       "low": 1,
       "high": 1
@@ -246,13 +168,7 @@
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "Hit on 09:35",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 17250,
@@ -263,30 +179,12 @@
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 17300,
-    "PE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
-    "CE": {
-      "target": 160.55,
-      "status": "Hit on 09:35",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 17350,
@@ -297,23 +195,11 @@
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   },
   {
     "strike": 17400,
-    "PE": {
-      "target": 160.55,
-      "status": "",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    },
+    "PE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 },
     "CE": {
       "target": 160.55,
       "status": "Hit on 09:35",
@@ -331,12 +217,6 @@
       "low": 1,
       "high": 1
     },
-    "CE": {
-      "target": 160.55,
-      "status": "Hit on 09:35",
-      "ltp": 1,
-      "low": 1,
-      "high": 1
-    }
+    "CE": { "target": 160.55, "status": "", "ltp": 1, "low": 1, "high": 1 }
   }
 ]

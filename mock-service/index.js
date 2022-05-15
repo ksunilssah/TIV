@@ -233,6 +233,11 @@ app.post('/get_trending_oi', (req, res) => {
   res.send(result);
 });
 
+app.post('/oi_compass', (req, res) => {
+  const result = LoadJSONFile('oi-compass.json');
+  res.send(result);
+});
+
 const options = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem'),
