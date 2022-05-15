@@ -21,7 +21,7 @@ ChartJS.register(
 );
 
 export const options = {
-  indexAxis: 'y',
+  indexAxis: 'x',
   color: '#fff',
   responsive: true,
   maintainAspectRatio: false,
@@ -46,7 +46,6 @@ export const options = {
   elements: {
     bar: {
       borderWidth: 0,
-      height: 50,
     },
   },
   plugins: {
@@ -66,29 +65,46 @@ export const options = {
   },
 };
 
-const OIGraph = (props) => {
-  const { strikesList, PE, CE } = props.oiCompassList;
+const PeCeGraph = (props) => {
+  const { PE, CE } = props.oiCompassList;
+  let totalPE = 0;
+  let totalCE = 0;
+  PE.forEach((item) => {
+    totalPE = item + totalPE;
+  });
+
+  CE.forEach((item) => {
+    totalCE = item + totalCE;
+  });
 
   const data = {
-    labels: strikesList,
+    labels: ['CE Chg', 'PE Chg'],
     datasets: [
       {
         label: 'CE',
-        data: CE,
-        backgroundColor: ['rgba(255, 99, 132, 1)'],
-      },
-      {
-        label: 'PE',
-        data: PE,
-        backgroundColor: ['#00d25b'],
+        data: [totalCE, totalPE],
+        backgroundColor: ['rgba(255, 99, 132, 1)', '#00d25b'],
       },
     ],
   };
 
   return (
-    <div className="oi-graph">
-      <Bar options={options} plugins={[ChartDataLabels]} data={data} />
-    </div>
+    <>
+      <h4 className="card-title">Change in CE/PE</h4>
+      <div className="pe-ce-oi-graph  ">
+        <Bar options={options} plugins={[ChartDataLabels]} data={data} />
+      </div>
+      <div className="change-in-pe-ce">
+        <ul>
+          <li>
+            Change in PE <span>{totalPE}</span>
+          </li>
+          <li>
+            Change in CE <span>{totalCE}</span>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
-export default OIGraph;
+export default PeCeGraph;

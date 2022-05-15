@@ -1,21 +1,34 @@
 import apiService from './index';
 import store from '../store';
-import { getStrikes } from './constants';
+import { getOICompass } from './constants';
 
-export const getStrikesList = async () => {
+export const getOICompassResult = async (query) => {
   try {
-    const response = await apiService.get(getStrikes);
+    let queryObj = {};
+    if (query) {
+      queryObj = query;
+    } else {
+      queryObj = store.oiCompassQuery;
+    }
+    const response = await apiService.submit(getOICompass, queryObj);
     if (response.data) {
-      const selectedStrikesList = [];
-      response.data.forEach((item) => {
-        if (item.selected == true) {
-          selectedStrikesList.push(item.strike);
-        }
-      });
-      store.updateStrikesList(response.data);
-      //  return response.data;
+      const strikesList = [];
+      const PE = [];
+      const CE = [];
+      const netCE = [];
+      const netPE = [];
+      const { strikes } = response.data;
+      for (const key in strikes) {
+        strikesList.push(key);
+        const { ce, pe, ce_net, pe_net } = strikes[key];
+        PE.push(pe);
+        CE.push(ce);
+        netCE.push(ce_net);
+        netPE.push(pe_net);
+      }
+      store.updateOICompassLList({ strikesList, PE, CE, netCE, netPE });
     }
   } catch (error) {
-    console.log('Strikes api error', error);
+    console.log('oi compass api error', error);
   }
 };

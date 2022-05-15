@@ -26,6 +26,18 @@ class Store {
   strikesList = [];
   trendingOIResult = [];
   selectedStrikesList = [];
+  oiCompassList = {
+    strikesList: [],
+    PE: [],
+    CE: [],
+    netCE: [],
+    netPE: [],
+  };
+
+  oiCompassQuery = {
+    symbol: 'NIFTY',
+    expiry: getExpiryDate(),
+  };
 
   constructor() {
     makeAutoObservable(this);
@@ -102,6 +114,14 @@ class Store {
 
   updateSelectedStrikes = (strikeList) => {
     this.selectedStrikesList = strikeList;
+  };
+
+  updateOICompassLList = (compassList) => {
+    this.oiCompassList = compassList;
+  };
+
+  updateOiCompassQuery = (query) => {
+    this.oiCompassQuery = { ...this.oiCompassQuery, ...query };
   };
 }
 

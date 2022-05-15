@@ -19,7 +19,6 @@ export default class QueryPanel extends Component {
   onDateChange = (event) => {
     const expiry = event.target.value;
     const { updateTrendingOI } = this.props.store;
-    console.log(expiry);
     updateTrendingOI({ expiry });
   };
 

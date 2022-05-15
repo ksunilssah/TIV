@@ -21,7 +21,7 @@ ChartJS.register(
 );
 
 export const options = {
-  indexAxis: 'y',
+  indexAxis: 'x',
   color: '#fff',
   responsive: true,
   maintainAspectRatio: false,
@@ -66,20 +66,20 @@ export const options = {
   },
 };
 
-const OIGraph = (props) => {
-  const { strikesList, PE, CE } = props.oiCompassList;
+const NetOIGraph = (props) => {
+  const { strikesList, netPE, netCE } = props.oiCompassList;
 
   const data = {
     labels: strikesList,
     datasets: [
       {
         label: 'CE',
-        data: CE,
+        data: netCE,
         backgroundColor: ['rgba(255, 99, 132, 1)'],
       },
       {
         label: 'PE',
-        data: PE,
+        data: netPE,
         backgroundColor: ['#00d25b'],
       },
     ],
@@ -91,4 +91,4 @@ const OIGraph = (props) => {
     </div>
   );
 };
-export default OIGraph;
+export default NetOIGraph;

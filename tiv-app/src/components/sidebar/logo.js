@@ -7,7 +7,7 @@ const Logo = () => (
       <img src="/img/tiv-logo.png" alt="Trading in Veins"></img>
     </Link>
     <Link id="logo-min" className="sidebar-brand brand-logo-mini" to="/app">
-      TIV
+      <img src="/img/m-logo.jpeg" alt="Trading in Veins"></img>
     </Link>
   </div>
 );

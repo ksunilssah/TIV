@@ -21,10 +21,10 @@ export const appConfig = [
         title: 'High Momentum',
         routeName: '/app/high-momentum',
       },
-      {
-        title: 'Breakout (15min)',
-        routeName: '/app/breakout-15',
-      },
+      // {
+      //   title: 'Breakout (15min)',
+      //   routeName: '/app/breakout-15',
+      // },
     ],
   },
   {
@@ -71,5 +71,10 @@ export const appConfig = [
         routeName: '/app/pre-open-fno',
       },
     ],
+  },
+  {
+    title: 'Logout',
+    routeName: '/logout',
+    icon: 'mdi-logout text-danger',
   },
 ];
