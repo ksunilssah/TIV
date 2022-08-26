@@ -53,6 +53,30 @@ const Menu = () => {
           </div>
         </li>
       );
+    } else if (title === 'Logout') {
+      return (
+        <li
+          className={
+            activeLink === routeName
+              ? 'nav-item menu-items active'
+              : 'nav-item menu-items'
+          }
+          key={routeName}
+        >
+          <button
+            className="nav-link nav-button"
+            href="#"
+            onClick={() => {
+              window.location.href = '/logout';
+            }}
+          >
+            <span className="menu-icon">
+              <i className={`mdi ${icon}`}></i>
+            </span>
+            <span className="menu-title">{title}</span>
+          </button>
+        </li>
+      );
     } else {
       return (
         <li
