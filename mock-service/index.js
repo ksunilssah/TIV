@@ -238,6 +238,11 @@ app.post('/oi_compass', (req, res) => {
   res.send(result);
 });
 
+app.post('/get_ego_strategy', (req, res) => {
+  const result = LoadJSONFile('ego.json');
+  res.send(result);
+});
+
 const options = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem'),

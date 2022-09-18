@@ -39,6 +39,12 @@ class Store {
     expiry: getExpiryDate(),
   };
 
+  egoStrategyResultSet = [];
+  egoQuery = {
+    symbol: 'NIFTY',
+    expiry: getExpiryDate(),
+  };
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -122,6 +128,14 @@ class Store {
 
   updateOiCompassQuery = (query) => {
     this.oiCompassQuery = { ...this.oiCompassQuery, ...query };
+  };
+
+  updateEgoStrategyResultSet = (data) => {
+    this.egoStrategyResultSet = data;
+  };
+
+  updateEgoQuery = (query) => {
+    this.egoQuery = { ...this.egoQuery, ...query };
   };
 }
 

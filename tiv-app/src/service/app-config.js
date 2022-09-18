@@ -39,6 +39,10 @@ export const appConfig = [
         title: 'OI Compass',
         routeName: '/app/oi-compass',
       },
+      {
+        title: 'EGO',
+        routeName: '/app/ego',
+      },
     ],
   },
   {
