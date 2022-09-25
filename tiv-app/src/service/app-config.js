@@ -21,10 +21,10 @@ export const appConfig = [
         title: 'High Momentum',
         routeName: '/app/high-momentum',
       },
-      // {
-      //   title: 'Breakout (15min)',
-      //   routeName: '/app/breakout-15',
-      // },
+      {
+        title: 'Breakout (15min)',
+        routeName: '/app/breakout-15',
+      },
     ],
   },
   {
@@ -40,7 +40,7 @@ export const appConfig = [
         routeName: '/app/oi-compass',
       },
       {
-        title: 'EGO',
+        title: 'Ego',
         routeName: '/app/ego',
       },
     ],
