@@ -86,7 +86,7 @@ const getChartData = (labels, data) => {
 const IndexGraphView = (props) => {
   const { labels = [], data = [] } = props;
   return (
-    <div className="col-6 grid-margin">
+    <div className="col-lg-6 grid-margin">
       <div className="card">
         <div className="card-body">
           <div className="table-responsive market-view-height">
