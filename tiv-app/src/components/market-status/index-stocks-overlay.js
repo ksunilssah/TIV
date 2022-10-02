@@ -51,7 +51,7 @@ const columnsDetails = {
 
 @inject('store')
 @observer
-export default class IndexView extends Component {
+export default class IndexStockOverlay extends Component {
   componentDidMount() {
     const { selectedIndex } = this.props;
     if (selectedIndex) {

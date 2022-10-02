@@ -9,7 +9,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(
   CategoryScale,
@@ -20,9 +19,9 @@ ChartJS.register(
   Legend
 );
 
-const getOptions = (navigate) => ({
+const getOptions = () => ({
   responsive: true,
-  //indexAxis: 'y',
+  indexAxis: 'y',
   maintainAspectRatio: false,
   color: '#fff',
   scales: {
@@ -54,9 +53,6 @@ const getOptions = (navigate) => ({
       fontSize: 14,
     },
   },
-  onClick: () => {
-    navigate('/app/sectoral-view');
-  },
 });
 
 const getChartData = (labels, data) => {
@@ -82,24 +78,19 @@ const getChartData = (labels, data) => {
         ],
         borderColor: ['rgba(255,255,255,1)'],
         borderWidth: 0.5,
-        width: '400',
       },
     ],
   };
 };
 
-const SectorViewGraph = (props) => {
+const IndexGraphView = (props) => {
   const { labels = [], data = [] } = props;
-  let navigate = useNavigate();
   return (
-    <div className="col-12 grid-margin">
+    <div className="col-6 grid-margin">
       <div className="card">
         <div className="card-body">
           <div className="table-responsive market-view-height">
-            <Bar
-              options={getOptions(navigate)}
-              data={getChartData(labels, data)}
-            />
+            <Bar options={getOptions()} data={getChartData(labels, data)} />
           </div>
         </div>
       </div>
@@ -107,4 +98,4 @@ const SectorViewGraph = (props) => {
   );
 };
 
-export default SectorViewGraph;
+export default IndexGraphView;

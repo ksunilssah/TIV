@@ -3,7 +3,6 @@ import { observer, inject } from 'mobx-react';
 import SectoralGrid from './sectoral-grid';
 import { getSectoralView } from '../../service/sectoral-view-service';
 import { callFrequency, defaultColDef } from '../../service/constants';
-import SectorViewGraph from './sector-view-graph';
 
 const columnsDetails = {
   columnDefs: [
@@ -15,38 +14,42 @@ const columnsDetails = {
     {
       field: 'lastPrice',
       headerName: 'LTP',
-      cellStyle: (params) =>
-        params.value < 0 ? { color: 'red' } : { color: 'white' },
       width: 100,
     },
     {
       headerName: 'Change',
       field: 'changePrice',
       cellStyle: (params) =>
-        params.value < 0 ? { color: 'red' } : { color: 'white' },
-      width: 100,
+        params.value < 0 ? { color: 'red' } : { color: 'green' },
+      width: 150,
     },
     {
       headerName: '% Change',
       field: 'pChange',
       cellStyle: (params) =>
-        params.value < 0 ? { color: 'red' } : { color: 'white' },
-      width: 100,
+        params.value < 0 ? { color: 'red' } : { color: 'green' },
+      width: 150,
     },
     {
-      headerName: 'Adv',
+      headerName: 'Advances',
       field: 'advances',
-      width: 100,
+      width: 110,
+      cellStyle: () => ({
+        color: 'green',
+      }),
     },
     {
-      headerName: 'Dec',
+      headerName: 'Declines',
       field: 'declines',
-      width: 100,
+      width: 110,
+      cellStyle: () => ({
+        color: 'red',
+      }),
     },
     {
-      headerName: 'PClose',
+      headerName: 'Previous Close',
       field: 'previousClose',
-      width: 100,
+      width: 180,
     },
   ],
 };
@@ -74,7 +77,6 @@ export default class SectoralView extends Component {
     const { sectoralView } = this.props.store;
     return (
       <div className="row sectoral-view custom-grid">
-        <SectorViewGraph rowData={sectoralView} />
         <SectoralGrid
           columnDefs={columnsDetails.columnDefs}
           rowData={sectoralView}

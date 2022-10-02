@@ -37,6 +37,8 @@ class Store {
   oiCompassQuery = {
     symbol: 'NIFTY',
     expiry: getExpiryDate(),
+    startTime: '9:15',
+    endTime: '15:30',
   };
 
   egoStrategyResultSet = [];

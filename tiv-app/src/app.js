@@ -8,7 +8,7 @@ import { Sidebar } from './components/sidebar';
 import Header from './components/header';
 import HighMomentum from './components/momentum/high-momentum';
 // import MomentumSpike from './components/momentum/momentum-spike';
-import SectoralView from './components/sectoral-view';
+// import SectoralView from './components/sectoral-view';
 import MarketStatus from './components/market-status';
 import PreStocks from './components/pre-open/pre-stocks';
 import PreIndexView from './components/pre-open/pre-sectoral-view';
@@ -38,7 +38,7 @@ const App = () => {
               <Route path="/app/oi-compass" element={<OICompass />}></Route>
               <Route path="/app/ego" element={<EgoStrategy />}></Route>
               <Route path="/app/volume-shocker" element={<VolumeShocker />} />
-              <Route path="/app/sectoral-view" element={<SectoralView />} />
+              {/* <Route path="/app/sectoral-view" element={<SectoralView />} /> */}
               <Route path="/app/pre-open-index" element={<PreIndexView />} />
               <Route path="/app/pre-open-stocks" element={<PreStocks />} />
               <Route path="/app/pre-open-nifty-50" element={<PreNifty50 />} />

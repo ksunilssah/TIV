@@ -6,5 +6,7 @@ export const getExpiryDate = () => {
   }
   const month = date.getMonth() + 1;
   const formattedMonth = month < 10 ? `0${month}` : month;
-  return `${date.getFullYear()}-${formattedMonth}-${date.getDate()}`;
+  const dayNumber = date.getDate();
+  const formattedDay = day < 10 ? `0${dayNumber}` : dayNumber;
+  return `${date.getFullYear()}-${formattedMonth}-${formattedDay}`;
 };

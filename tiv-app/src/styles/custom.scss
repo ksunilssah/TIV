@@ -502,9 +502,14 @@
   }
 }
 
-.market-view-height {
-  max-width: 800px;
-  margin: 0 auto;
+.market-status {
+  .market-view-height {
+    height: 400px;
+  }
+
+  .sectoral-view {
+    height: 420px;
+  }
 }
 
 .header-stock-list {

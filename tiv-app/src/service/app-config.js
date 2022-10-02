@@ -45,11 +45,11 @@ export const appConfig = [
       },
     ],
   },
-  {
-    title: 'Sectoral View',
-    routeName: '/app/sectoral-view',
-    icon: 'mdi-table-large',
-  },
+  // {
+  //   title: 'Sectoral View',
+  //   routeName: '/app/sectoral-view',
+  //   icon: 'mdi-table-large',
+  // },
   {
     title: 'Pre Open',
     icon: 'mdi-laptop',

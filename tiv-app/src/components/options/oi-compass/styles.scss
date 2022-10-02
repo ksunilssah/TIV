@@ -39,4 +39,30 @@
   .pe-ce-oi-row {
     margin-top: 10px;
   }
+
+  .time-range-row {
+    display: flex;
+    justify-content: end;
+
+    button {
+      width: 100px;
+      min-width: auto;
+    }
+
+    label {
+      font-size: 14px;
+    }
+  }
+
+  .submit-btn {
+    margin: 32px 0 0 15px;
+    display: inline-block;
+  }
+  .start-time {
+    margin-right: 15px;
+  }
+
+  #date-picker {
+    width: 150px;
+  }
 }

@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.16.5",
+    "@wojtekmaj/react-timerange-picker": "^4.0.0",
     "ag-grid-community": "^26.2.1",
     "ag-grid-react": "^26.2.0",
     "axios": "^0.24.0",
