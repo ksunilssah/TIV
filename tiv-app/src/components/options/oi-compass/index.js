@@ -94,6 +94,8 @@ export default class OICompass extends Component {
       startTime: '9:15',
       endTime: '15:30',
     });
+
+    getOICompassResult();
   };
 
   render() {
@@ -108,7 +110,7 @@ export default class OICompass extends Component {
             <div className="card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-6 grid-margin">
+                  <div className="col-md-6 grid-margin">
                     <div className="row">
                       <div className="col-xl-3 col-sm-3 form-group select-row">
                         <label htmlFor="index">Index</label>
@@ -136,7 +138,7 @@ export default class OICompass extends Component {
                     </div>
                   </div>
 
-                  <div className="col-6 grid-margin time-range-row">
+                  <div className="col-md-6 grid-margin time-range-row">
                     <div className="start-time">
                       <label htmlFor="interval">Start time</label>
                       <select

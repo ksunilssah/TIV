@@ -53,7 +53,7 @@ export const options = {
       display: true,
       anchor: 'end',
       color: '#fff',
-      align: 'end',
+      align: 'bottom',
       offset: 5,
     },
     legend: {
