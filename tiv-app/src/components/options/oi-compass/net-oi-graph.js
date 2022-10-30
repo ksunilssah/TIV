@@ -51,7 +51,7 @@ export const options = {
   },
   plugins: {
     datalabels: {
-      display: true,
+      display: false,
       anchor: 'end',
       color: '#fff',
       align: 'end',

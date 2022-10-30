@@ -12,6 +12,7 @@ export const getOICompassResult = async (query) => {
     }
     const response = await apiService.submit(getOICompass, queryObj);
     if (response.data) {
+      store.updateOIDataLoadingState(true);
       const strikesList = [];
       const PE = [];
       const CE = [];

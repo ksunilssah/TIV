@@ -405,8 +405,7 @@
   padding-top: 22%;
 }
 .lds-roller {
-  display: inline-block;
-  position: relative;
+  margin: 0 auto;
   width: 80px;
   height: 80px;
 }
@@ -548,5 +547,29 @@
     h5 {
       font-size: 12px;
     }
+  }
+  .header-stock-list li {
+    .d-flex {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-menu-wrapper {
+    width: calc(100% - 90px);
+    padding-left: 0;
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba($color: #000000, $alpha: 0.7);
+
+  .lds-roller {
+    margin-top: calc(50% - 80px);
   }
 }

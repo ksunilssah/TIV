@@ -25,7 +25,16 @@ export default class MarketStatus extends Component {
 
   render() {
     const { marketStatus, sectoralView } = this.props.store;
-    const { index_name, index_price, NIFTY50, NIFTYBANK, FNO } = marketStatus;
+    const {
+      index_name,
+      index_price,
+      NIFTY50,
+      NIFTYBANK,
+      NIFTY100,
+      NIFTY200,
+      NIFTYNEXT50,
+      FNO,
+    } = marketStatus;
 
     return (
       <div className="market-status">
@@ -48,6 +57,29 @@ export default class MarketStatus extends Component {
             <div className="card">
               <div className="card-body doughnut-height">
                 <DoughnutGraph name="FNO" data={FNO} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-4 grid-margin stretch-card">
+            <div className="card">
+              <div className="card-body doughnut-height">
+                <DoughnutGraph name="NIFTYNEXT50" data={NIFTYNEXT50} />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 grid-margin stretch-card">
+            <div className="card">
+              <div className="card-body doughnut-height">
+                <DoughnutGraph name="NIFTY100" data={NIFTY100} />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 grid-margin stretch-card">
+            <div className="card">
+              <div className="card-body doughnut-height">
+                <DoughnutGraph name="NIFTY200" data={NIFTY200} />
               </div>
             </div>
           </div>

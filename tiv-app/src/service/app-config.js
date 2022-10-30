@@ -21,22 +21,22 @@ export const appConfig = [
         title: 'High Momentum',
         routeName: '/app/high-momentum',
       },
-      {
-        title: 'Breakout (15min)',
-        routeName: '/app/breakout-15',
-      },
+      // {
+      //   title: 'Breakout (15min)',
+      //   routeName: '/app/breakout-15',
+      // },
     ],
   },
   {
     title: 'Options',
     icon: 'mdi-playlist-play',
     subRoutes: [
+      // {
+      //   title: 'Trending OI',
+      //   routeName: '/app/trending-oi',
+      // },
       {
-        title: 'Trending OI',
-        routeName: '/app/trending-oi',
-      },
-      {
-        title: 'OI Compass',
+        title: 'OI Data',
         routeName: '/app/oi-compass',
       },
       {

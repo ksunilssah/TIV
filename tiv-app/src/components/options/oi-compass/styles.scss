@@ -1,4 +1,5 @@
 .oi-compass {
+  position: relative;
   .oi-graph {
     min-height: 500px;
   }
@@ -43,6 +44,10 @@
   .time-range-row {
     display: flex;
     justify-content: end;
+
+    @media (max-width: 695px) {
+      flex-direction: column;
+    }
 
     select {
       width: 100px;

@@ -1,44 +1,56 @@
 {
-    "index_name": [
-        "NIFTYPVTBANK",
-        "NIFTYBANK",
-        "NIFTYPSUBANK",
-        "NIFTYMETAL",
-        "NIFTYAUTO",
-        "NIFTY50",
-        "NIFTYMEDIA",
-        "NIFTYREALTY",
-        "NIFTYIT",
-        "NIFTYENERGY",
-        "NIFTYFMCG",
-        "FINNIFTY",
-        "NIFTYPHARMA"
-    ],
-    "index_price": [
-        "2.72",
-        "2.65",
-        "2.15",
-        "1.93",
-        "1.62",
-        "1.57",
-        "1.46",
-        "1.14",
-        "1.09",
-        "0.96",
-        "0.07",
-        "0",
-        "-0.47"
-    ],
-    "NIFTY50": {
-        "declines": -5,
-        "advances": 44
-    },
-    "NIFTYBANK": {
-        "declines": -1,
-        "advances": 11
-    },
-    "FNO": {
-        "declines": -31,
-        "advances": 154
-    }
+  "index_name": [
+    "NIFTYPVTBANK",
+    "NIFTYBANK",
+    "NIFTYPSUBANK",
+    "NIFTYMETAL",
+    "NIFTYAUTO",
+    "NIFTY50",
+    "NIFTYMEDIA",
+    "NIFTYREALTY",
+    "NIFTYIT",
+    "NIFTYENERGY",
+    "NIFTYFMCG",
+    "FINNIFTY",
+    "NIFTYPHARMA"
+  ],
+  "index_price": [
+    "2.72",
+    "2.65",
+    "2.15",
+    "1.93",
+    "1.62",
+    "1.57",
+    "1.46",
+    "1.14",
+    "1.09",
+    "0.96",
+    "0.07",
+    "0",
+    "-0.47"
+  ],
+  "NIFTY50": {
+    "declines": -5,
+    "advances": 44
+  },
+  "NIFTYBANK": {
+    "declines": -1,
+    "advances": 11
+  },
+  "FNO": {
+    "declines": -31,
+    "advances": 154
+  },
+  "NIFTYNEXT50": {
+    "declines": -5,
+    "advances": 44
+  },
+  "NIFTY100": {
+    "declines": -5,
+    "advances": 44
+  },
+  "NIFTY200": {
+    "declines": -5,
+    "advances": 44
+  }
 }

@@ -8,6 +8,7 @@ import OIGraph from './oi-graph';
 import PeCeGraph from './ce-pe-graph';
 import PeCeNetGraph from './ce-pe-net-graph';
 import NetOIGraph from './net-oi-graph';
+import Spinner from '../../spinner';
 
 @inject('store')
 @observer
@@ -65,9 +66,11 @@ export default class OICompass extends Component {
   };
 
   onTimeRangeSubmit = () => {
-    const { oiCompassQuery, updateOiCompassQuery } = this.props.store;
+    const { oiCompassQuery, updateOiCompassQuery, updateOIDataLoadingState } =
+      this.props.store;
     const { symbol, expiry } = oiCompassQuery;
     const { startTime, endTime } = this.state;
+    updateOIDataLoadingState(false);
     updateOiCompassQuery({
       symbol,
       expiry,
@@ -99,12 +102,13 @@ export default class OICompass extends Component {
   };
 
   render() {
-    const { oiCompassList, oiCompassQuery } = this.props.store;
+    const { oiCompassList, oiCompassQuery, isOIDataLoaded } = this.props.store;
     const { symbol, expiry } = oiCompassQuery;
     const { startTime, endTime } = this.state;
 
     return (
       <div className="oi-compass">
+        {!isOIDataLoaded && <Spinner />}
         <div className="row">
           <div className="col-12 grid-margin">
             <div className="card">
@@ -336,7 +340,7 @@ export default class OICompass extends Component {
           <div className="col-md-8 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
-                <h4 className="card-title">OI Compass</h4>
+                <h4 className="card-title">OI Data</h4>
                 <OIGraph oiCompassList={oiCompassList} />
               </div>
             </div>

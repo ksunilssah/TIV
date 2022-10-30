@@ -46,6 +46,7 @@ class Store {
     symbol: 'NIFTY',
     expiry: getExpiryDate(),
   };
+  isOIDataLoaded = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -138,6 +139,10 @@ class Store {
 
   updateEgoQuery = (query) => {
     this.egoQuery = { ...this.egoQuery, ...query };
+  };
+
+  updateOIDataLoadingState = (status) => {
+    this.isOIDataLoaded = status;
   };
 }
 

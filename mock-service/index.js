@@ -235,7 +235,9 @@ app.post('/get_trending_oi', (req, res) => {
 
 app.post('/oi_compass', (req, res) => {
   const result = LoadJSONFile('oi-compass.json');
-  res.send(result);
+  setTimeout(() => {
+    res.send(result);
+  }, 700);
 });
 
 app.post('/get_ego_strategy', (req, res) => {
